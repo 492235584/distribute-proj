@@ -3,9 +3,11 @@ package node;
 import node.requestpojo.FileDownloadMessage;
 import node.requestpojo.FileSaveMessage;
 import node.requestpojo.FileSearchMessage;
+import node.requestpojo.caculateCallingMessage;
 import node.responsepojo.FileSearchResponse;
 import rpc.client.RPCClient;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
@@ -26,7 +28,8 @@ public class NodeClient {
                 rpc("save_res", Boolean.class).
                 rpc("searchFile_res", Set.class).
                 rpc("download_res", Boolean.class).
-                rpc("holdFile_res", Boolean.class);
+                rpc("holdFile_res", Boolean.class).
+                rpc("callingTimes_res", HashMap.class);
     }
 
     public List<String> searchNode(String messageId) {
@@ -53,6 +56,9 @@ public class NodeClient {
         return (Boolean) client.send("download", message);
     }
 
+    public HashMap<String ,Integer> caculateCallingTimes(caculateCallingMessage message){
+        return (HashMap<String, Integer>) client.send("callingTimes",message);
+    }
     /**
      * build a connect to serverIp:port
      *

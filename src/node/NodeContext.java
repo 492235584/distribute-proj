@@ -3,6 +3,7 @@ package node;
 import node.requestpojo.FileDownloadMessage;
 import node.requestpojo.FileSaveMessage;
 import node.requestpojo.FileSearchMessage;
+import node.requestpojo.caculateCallingMessage;
 import node.responsepojo.FileSearchResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +22,7 @@ public class NodeContext {
     public static final String DIR_PATH = "files";
     private static final Logger LOG = LoggerFactory.getLogger(NodeContext.class);
     // first node to link
-    public static final String START_IP = "100.66.228.198";
+    public static final String START_IP = "100.66.218.200";
     public static final int SERVER_POST = 45455;
     // this node's LOCAL_IP
     public static final String LOCAL_IP = getLocalHostLANIp();
@@ -329,4 +330,95 @@ public class NodeContext {
             n.getValue().holdFile(new FileSearchMessage(messageId, filename));
         }
     }
+
+
+    //统计平均通话次数
+    public static void averageCallingTimes(String path,int numberOfDays){
+        String[] data=readCallingFile(path);
+        if(data!=null){
+            //第一份取1/4
+            int length1=(int)Math.floor(data.length/4);
+            String[] myPart=Arrays.copyOfRange(data,0,length1);
+            HashMap<String,Integer> myResult=callingTimes(myPart);
+            String messageId = RequestId.next();
+            messageSearched.put(messageId, 1);
+            //
+            String[] otherPart=Arrays.copyOfRange(data,length1,data.length);
+
+            int length2=(int)Math.floor(otherPart.length/neighbors.size());
+            Iterator entries = neighbors.entrySet().iterator();
+            int id=1;
+            String[] sendData;
+            while (entries.hasNext()) {
+                Map.Entry entry = (Map.Entry) entries.next();
+                NodeClient client = (NodeClient)entry.getValue();
+                if(entries.hasNext())
+                    sendData=Arrays.copyOfRange(otherPart,(id-1)*length2,id*length2);
+                else
+                    sendData=Arrays.copyOfRange(otherPart,(id-1)*length2,otherPart.length);
+                id++;
+                HashMap<String,Integer> result = client.caculateCallingTimes(new caculateCallingMessage(messageId,LOCAL_IP,sendData));
+                combineMap(myResult,result);
+            }
+
+            //do write result into file
+            System.out.println(myResult);
+        }
+    }
+
+
+    //合并统计结果HashMap
+    public static void combineMap(HashMap<String,Integer> map1,HashMap<String,Integer> map2){
+        for (Map.Entry<String, Integer> entry : map2.entrySet()) {
+            if(map1.get(entry.getKey())==null)
+                map1.put(entry.getKey(),entry.getValue());
+            else
+                map1.put(entry.getKey(),entry.getValue()+map1.get(entry.getKey()));
+        }
+    }
+
+
+    //统计通话次数
+    public static HashMap<String, Integer> callingTimes(String[] dataArr){
+        HashMap<String,Integer> sets=new HashMap<>();
+        for (int i=0;i<dataArr.length;i++) {
+            String[] elements=dataArr[i].split("\\s+");
+            if(sets.get(elements[1])==null){
+                sets.put(elements[1],1);
+            }else{
+                sets.put(elements[1],sets.get(elements[1])+1);
+            }
+        }
+        return sets;
+    }
+
+
+    //读取分布式计算文件
+    public static String[] readCallingFile(String path){
+        ArrayList<String> arrayList = new ArrayList<>();
+        try {
+            FileReader fr = new FileReader(path);
+            BufferedReader bf = new BufferedReader(fr);
+            String str;
+            // 按行读取字符串
+            while ((str = bf.readLine()) != null) {
+                arrayList.add(str);
+            }
+            bf.close();
+            fr.close();
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+        }
+        // 对ArrayList中存储的字符串进行处理
+        int length = arrayList.size();
+        String[] array = new String[length];
+        for (int i = 0; i < length; i++) {
+            String s = arrayList.get(i);
+            array[i] = s;
+        }
+        // 返回数组
+        return array;
+    }
+
 }
