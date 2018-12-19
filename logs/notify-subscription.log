@@ -2,3 +2,23 @@
 2018-12-10 21:06:36,385 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x117e51c2]'
 2018-12-10 21:06:36,401 - server started @ 192.168.31.215:45455
 
+2018-12-19 17:07:07,781 - local IP : 100.66.218.200
+2018-12-19 17:07:08,458 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0xa4ad1409]'
+2018-12-19 17:07:08,466 - server started @ 100.66.218.200:45455
+
+2018-12-19 17:07:14,106 - connection comes : 100.67.24.99
+2018-12-19 17:07:14,127 - build connect to 100.67.24.99
+2018-12-19 17:07:14,387 - start search node
+2018-12-19 17:07:14,390 - search node complete
+2018-12-19 17:19:32,820 - local IP : 100.66.218.200
+2018-12-19 17:19:33,905 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x43c5bd5a]'
+2018-12-19 17:19:33,918 - server started @ 100.66.218.200:45455
+
+2018-12-19 17:26:17,649 - local IP : 100.66.218.200
+2018-12-19 17:26:18,383 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x2b95202a]'
+2018-12-19 17:26:18,394 - server started @ 100.66.218.200:45455
+
+2018-12-19 17:26:35,137 - connection comes : 100.67.24.99
+2018-12-19 17:26:35,159 - build connect to 100.67.24.99
+2018-12-19 17:26:35,364 - start search node
+2018-12-19 17:26:35,365 - search node complete
