@@ -3,16 +3,21 @@ package node.UI;
 import node.NodeClient;
 import node.NodeContext;
 import node.NodeServer;
+import node.responsepojo.FileSearchResponse;
 
 import javax.swing.*;
 import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.*;
+import java.util.List;
 
 import static node.NodeContext.*;
 
 public class UIPage {
+    private static HashMap<FilenameAndIp, List<FileSearchResponse>> fileAndAddress = new HashMap<>();
+
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         initUI();
@@ -20,7 +25,7 @@ public class UIPage {
 
     }
 
-    public static void initNode(){
+    public static void initNode() {
         NodeServer.start(NodeContext.LOCAL_IP);
         NodeClient.start(NodeContext.START_IP, NodeContext.SERVER_POST);
         buildTopology();
@@ -38,22 +43,22 @@ public class UIPage {
         frame.setResizable(false);// 设置禁止调整窗体大小
 
         // 实例化FlowLayout流式布局类的对象，指定对齐方式为居中对齐，组件之间的间隔为5个像素
-        FlowLayout fl = new FlowLayout(FlowLayout.CENTER,50,30);
+        FlowLayout fl = new FlowLayout(FlowLayout.CENTER, 50, 30);
         // 实例化流式布局类的对象
         frame.setLayout(fl);
 
         // 实例化JLabel标签对象，该对象显示"账号："
-        JLabel labName = new JLabel("分布式系统设计",JLabel.CENTER);
+        JLabel labName = new JLabel("分布式系统设计", JLabel.CENTER);
         labName.setFont(new Font("黑体", Font.BOLD, 30));
         // 将labName标签添加到窗体上
         frame.add(labName);
 
-        JPanel mainPanel=new JPanel();
-        mainPanel.setLayout(new BorderLayout(30,10));
-        Dimension mainDim = new Dimension(660,200);
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new BorderLayout(30, 10));
+        Dimension mainDim = new Dimension(660, 200);
         mainPanel.setPreferredSize(mainDim);
 
-        JPanel panel=new JPanel();
+        JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
         // 5.实例化元素组件对象，将元素组件对象添加到窗体上（组件添加要在窗体可见之前完成）。
         // 实例化ImageIcon图标类的对象，该对象加载磁盘上的图片文件到内存中，这里的路径要用两个\
@@ -62,17 +67,17 @@ public class UIPage {
         JLabel labIcon = new JLabel(icon);
         //设置标签大小
         //labIcon.setSize(30,20);setSize方法只对窗体有效，如果想设置组件的大小只能用
-        Dimension dim11 = new Dimension(200,137);
+        Dimension dim11 = new Dimension(200, 137);
         labIcon.setPreferredSize(dim11);
         // 将labIcon标签添加到窗体上
-        panel.add(labIcon,BorderLayout.NORTH);
+        panel.add(labIcon, BorderLayout.NORTH);
 
-        JButton button1=new JButton();
-        Dimension dim12 = new Dimension(20,20);
+        JButton button1 = new JButton();
+        Dimension dim12 = new Dimension(20, 20);
         button1.setText("上传文件");
         //设置按钮的大小
         button1.setSize(dim12);
-        panel.add(button1,BorderLayout.SOUTH);
+        panel.add(button1, BorderLayout.SOUTH);
 
         button1.addActionListener(new ActionListener() {
             @Override
@@ -84,7 +89,7 @@ public class UIPage {
                 //弹出选择框
                 int returnVal = fDialog.showOpenDialog(null);
                 // 如果是选择了文件
-                if(JFileChooser.APPROVE_OPTION == returnVal){
+                if (JFileChooser.APPROVE_OPTION == returnVal) {
                     //打印出文件的路径，你可以修改位 把路径值 写到 textField 中
                     System.out.println(fDialog.getSelectedFile());
                     uploadFile(fDialog.getSelectedFile().toString());
@@ -92,50 +97,52 @@ public class UIPage {
             }
         });
 
-        mainPanel.add(panel,BorderLayout.WEST);
+        mainPanel.add(panel, BorderLayout.WEST);
 
 
-        JPanel panel2=new JPanel();
+        JPanel panel2 = new JPanel();
         panel2.setLayout(new BorderLayout());
         ImageIcon icon2 = new ImageIcon("download.png");
         JLabel labIcon2 = new JLabel(icon2);
-        Dimension dim21 = new Dimension(200,137);
+        Dimension dim21 = new Dimension(200, 137);
         labIcon2.setPreferredSize(dim21);
-        panel2.add(labIcon2,BorderLayout.NORTH);
+        panel2.add(labIcon2, BorderLayout.NORTH);
 
-        JButton button2=new JButton();
-        Dimension dim22 = new Dimension(20,20);
+        JButton button2 = new JButton();
+        Dimension dim22 = new Dimension(20, 20);
         button2.setText("搜索文件");
         button2.setSize(dim22);
-        panel2.add(button2,BorderLayout.SOUTH);
+        panel2.add(button2, BorderLayout.SOUTH);
 
         button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String key = JOptionPane.showInputDialog("Please input filename");
-//                Set<FileSearchResponse> searchResults=searchFile(key);
-                if(key!=null)
-                      generateTable();
+                String key = JOptionPane.showInputDialog("Please input keywords");
+                Set<FileSearchResponse> searchResults = searchFile(key);
+                processResponse(searchResults);
+
+                if (key != null)
+                    generateTable(searchResults);
             }
         });
 
-        mainPanel.add(panel2,BorderLayout.CENTER);
+        mainPanel.add(panel2, BorderLayout.CENTER);
 
-        JPanel panel3=new JPanel();
+        JPanel panel3 = new JPanel();
         panel3.setLayout(new BorderLayout());
         ImageIcon icon3 = new ImageIcon("upload.png");
         JLabel labIcon3 = new JLabel(icon3);
-        Dimension dim31 = new Dimension(200,137);
+        Dimension dim31 = new Dimension(200, 137);
         labIcon3.setPreferredSize(dim31);
-        panel3.add(labIcon3,BorderLayout.NORTH);
+        panel3.add(labIcon3, BorderLayout.NORTH);
 
-        JButton button3=new JButton();
-        Dimension dim32 = new Dimension(20,20);
+        JButton button3 = new JButton();
+        Dimension dim32 = new Dimension(20, 20);
         button3.setText("分布式计算");
         button3.setSize(dim32);
-        panel3.add(button3,BorderLayout.SOUTH);
+        panel3.add(button3, BorderLayout.SOUTH);
 
-        mainPanel.add(panel3,BorderLayout.EAST);
+        mainPanel.add(panel3, BorderLayout.EAST);
 
         frame.add(mainPanel);
 
@@ -143,8 +150,7 @@ public class UIPage {
     }
 
 
-
-    public static void generateTable(){
+    public static void generateTable(Set<FileSearchResponse> files) {
         JFrame tableframe = new JFrame("searchResults");
         Table_Model model = new Table_Model();
         JTable table = new JTable(model);
@@ -158,7 +164,9 @@ public class UIPage {
         //禁止表格的选择功能,不然在点击按钮时表格的整行都会被选中
         table.setRowSelectionAllowed(false);
 
-        model.addRow("jafjhwhj.txt", "qwfqf", "1212");
+        for (FileSearchResponse f : files) {
+            model.addRow(f.getFilename(), f.getSourceIp(), String.valueOf(f.getSize()));
+        }
 
         JScrollPane s_pan = new JScrollPane(table);
 
@@ -167,6 +175,121 @@ public class UIPage {
         tableframe.setSize(500, 500);
         tableframe.setVisible(true);
 
+    }
+
+    /**
+     * 处理FileSearchResponse
+     *
+     * @param searchResults
+     */
+    private static void processResponse(Set<FileSearchResponse> searchResults){
+        for (FileSearchResponse response : searchResults) {
+            FilenameAndIp resourceInfo = new FilenameAndIp(response.getFilename(), response.getSourceIp());
+            if (fileAndAddress.containsKey(resourceInfo)) {
+                List<FileSearchResponse> list = fileAndAddress.get(resourceInfo);
+                list.add(response);
+            } else {
+                List<FileSearchResponse> list = new ArrayList<>();
+                list.add(response);
+                fileAndAddress.put(resourceInfo, list);
+            }
+        }
+    }
+
+    /**
+     * judge whether a list contain all file parts or not
+     *
+     * @param list
+     * @return
+     */
+    private static boolean containAllFiles(List<FileSearchResponse> list) {
+        if (list == null || list.size() == 0) {
+            return false;
+        }
+
+        int total = list.get(0).getTotalPart();
+
+        // just have one file
+        if (total == 1){
+            return true;
+        }
+
+
+        Set<Integer> allpart = new HashSet<>();
+        for (int i = 1; i <= total; i++) {
+            allpart.add(i);
+        }
+
+        for (FileSearchResponse response : list) {
+            if(allpart.contains(response.getPart())) {
+                allpart.remove(response.getPart());
+            }
+        }
+
+        return allpart.size() == 0;
+    }
+
+    /**
+     * download from list
+     *
+     * @param list
+     */
+    private static void download(List<FileSearchResponse> list) {
+        if (list == null || list.size() == 0) {
+            return;
+        }
+
+        // single file
+        if (list.get(0).getTotalPart() == 1) {
+            FileSearchResponse response = list.get(0);
+            NodeContext.downloadFile(response.getCompleteName(), response.getSaveIp());
+        } else { // totalPart > 1
+            int total = list.get(0).getTotalPart();
+            Map<Integer, FileSearchResponse> parts = new TreeMap<>();
+            for (FileSearchResponse response : list) {
+                if (response.getTotalPart() > 1) {
+                    parts.put(response.getPart(), response);
+                }
+            }
+
+            // download every parts
+            for (FileSearchResponse response : parts.values()) {
+                NodeContext.downloadFile(response.getCompleteName(), response.getSaveIp());
+            }
+
+            // combine all parts to a file
+            byte[][] splitedDatas = new byte[parts.size()][];
+            for (FileSearchResponse response : parts.values()) {
+                // wait until received file
+                while (!NodeContext.filenameAndStatus.containsKey(response.getCompleteName())) {
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                // read part
+                byte[] datas = NodeContext.readFile(response.getCompleteName());
+                splitedDatas[response.getPart()] = datas;
+            }
+            List<Byte> allData = new ArrayList<>();
+            for (byte[] datas : splitedDatas) {
+                for (byte b : datas) {
+                    allData.add(b);
+                }
+            }
+            byte[] bytes = new byte[allData.size()];
+            for (int i = 0; i < bytes.length; i++) {
+                bytes[i] = allData.get(i);
+            }
+
+            // save complete file
+            NodeContext.saveFile(list.get(0).getSourceIp() + NodeContext.NAMESPLIT + list.get(0).getFilename(), bytes, null);
+            // unpate filenameAndStatus
+            for (FileSearchResponse response : parts.values()) {
+                NodeContext.filenameAndStatus.remove(response.getCompleteName());
+            }
+        }
     }
 }
 

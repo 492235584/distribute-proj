@@ -18,11 +18,11 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class NodeContext {
-    public static final String NAMESPLIT = "-*-";
+    public static final String NAMESPLIT = "-\\*-";
     public static final String DIR_PATH = "files";
     private static final Logger LOG = LoggerFactory.getLogger(NodeContext.class);
     // first node to link
-    public static final String START_IP = "100.66.218.200";
+    public static final String START_IP = "";
     public static final int SERVER_POST = 45455;
     // this node's LOCAL_IP
     public static final String LOCAL_IP = getLocalHostLANIp();
@@ -167,12 +167,12 @@ public class NodeContext {
      * download file
      *
      * @param filename file
-     * @param ip       where to download
+     * @param saveIp       where to download
      */
-    public static void downloadFile(String filename, String ip) {
+    public static void downloadFile(String filename, String saveIp) {
         String messageId = RequestId.next();
         FileDownloadMessage message = new FileDownloadMessage(messageId, filename, LOCAL_IP);
-        NodeClient client = neighbors.get(ip);
+        NodeClient client = neighbors.get(saveIp);
         if (client.downloadFile(message)) {
             LOG.info("download complete : " + filename);
         } else {
@@ -253,7 +253,7 @@ public class NodeContext {
         while (keys.hasMoreElements()) {
             String filename = keys.nextElement();
             if (filename.contains(key)) {
-                files.add(new FileSearchResponse(LOCAL_IP, filename));
+                files.add(new FileSearchResponse(LOCAL_IP, filename, getFileSize(filename)));
             }
         }
 
@@ -421,4 +421,8 @@ public class NodeContext {
         return array;
     }
 
+    private static long getFileSize(String filename) {
+        File f = new File(NodeContext.DIR_PATH + "/" + filename);
+        return f.length();
+    }
 }
