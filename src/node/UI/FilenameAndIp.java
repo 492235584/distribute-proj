@@ -3,10 +3,17 @@ package node.UI;
 public class FilenameAndIp {
     private String filename;
     private String ip;
+    private long size;
 
     public FilenameAndIp(String filename, String ip) {
         this.filename = filename;
         this.ip = ip;
+    }
+
+    public FilenameAndIp(String filename, String ip, int size) {
+        this.filename = filename;
+        this.ip = ip;
+        this.size = size;
     }
 
     public String getFilename() {
@@ -25,6 +32,14 @@ public class FilenameAndIp {
         this.ip = ip;
     }
 
+    public long getSize() {
+        return size;
+    }
+
+    public void setSize(long size) {
+        this.size = size;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -32,14 +47,14 @@ public class FilenameAndIp {
 
         FilenameAndIp that = (FilenameAndIp) o;
 
-        if (filename != null ? !filename.equals(that.filename) : that.filename != null) return false;
-        return ip != null ? ip.equals(that.ip) : that.ip == null;
+        if (!filename.equals(that.filename)) return false;
+        return ip.equals(that.ip);
     }
 
     @Override
     public int hashCode() {
-        int result = filename != null ? filename.hashCode() : 0;
-        result = 31 * result + (ip != null ? ip.hashCode() : 0);
+        int result = filename.hashCode();
+        result = 31 * result + ip.hashCode();
         return result;
     }
 }

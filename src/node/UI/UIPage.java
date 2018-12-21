@@ -16,7 +16,6 @@ import java.util.List;
 import static node.NodeContext.*;
 
 public class UIPage {
-    private static HashMap<FilenameAndIp, List<FileSearchResponse>> fileAndAddress = new HashMap<>();
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -117,10 +116,8 @@ public class UIPage {
         button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String key = JOptionPane.showInputDialog("Please input keywords");
+                String key = JOptionPane.showInputDialog("Please input filename");
                 Set<FileSearchResponse> searchResults = searchFile(key);
-                processResponse(searchResults);
-
                 if (key != null)
                     generateTable(searchResults);
             }
@@ -149,24 +146,41 @@ public class UIPage {
         frame.setVisible(true);// 设置窗体为可见
     }
 
-
-    public static void generateTable(Set<FileSearchResponse> files) {
+    public static void generateTable(Set<FileSearchResponse> result) {
         JFrame tableframe = new JFrame("searchResults");
         Table_Model model = new Table_Model();
         JTable table = new JTable(model);
         TableColumnModel tcm = table.getColumnModel();
 
-        tcm.getColumn(3).setCellRenderer(new MyButtonRenderer("download"));
-        tcm.getColumn(3).setCellEditor(new MyButtonEditor("download"));
+        MyEvent e = new MyEvent() {
+            @Override
+            public void invoke(ActionEvent e) {
+                MyButton button = (MyButton) e.getSource();
+                //打印被点击的行和列
+                System.out.println("row:" + button.getRow() + "column :" + button.getColumn());
+            }
+        };
 
-        tcm.getColumn(4).setCellRenderer(new MyButtonRenderer("update"));
-        tcm.getColumn(4).setCellEditor(new MyButtonEditor("update"));
+        tcm.getColumn(3).setCellRenderer(new ButtonRender("download"));
+        tcm.getColumn(3).setCellEditor(new ButtonEditor(e, "download"));
+
+        tcm.getColumn(4).setCellRenderer(new ButtonRender("update"));
+        tcm.getColumn(4).setCellEditor(new ButtonEditor(e, "update"));
         //禁止表格的选择功能,不然在点击按钮时表格的整行都会被选中
         table.setRowSelectionAllowed(false);
 
-        for (FileSearchResponse f : files) {
-            model.addRow(f.getFilename(), f.getSourceIp(), String.valueOf(f.getSize()));
+        /**--------*/
+        HashMap<FilenameAndIp, List<FileSearchResponse>> fileAndAddress = splitResponse(result);
+        for (Map.Entry<FilenameAndIp, List<FileSearchResponse>> entry : fileAndAddress.entrySet()) {
+            long size = containAllFiles(entry.getValue());
+            if (size > 0) {
+                FilenameAndIp info = entry.getKey();
+                model.addRow(info.getFilename(), info.getIp(), String.valueOf(size));
+            }
         }
+
+
+
 
         JScrollPane s_pan = new JScrollPane(table);
 
@@ -174,15 +188,13 @@ public class UIPage {
 
         tableframe.setSize(500, 500);
         tableframe.setVisible(true);
-
     }
 
     /**
-     * 处理FileSearchResponse
-     *
-     * @param searchResults
+     * 处理FileSearchResponse,相同的文件响应放在一起
      */
-    private static void processResponse(Set<FileSearchResponse> searchResults){
+    private static HashMap<FilenameAndIp, List<FileSearchResponse>> splitResponse(Set<FileSearchResponse> searchResults) {
+        HashMap<FilenameAndIp, List<FileSearchResponse>> fileAndAddress = new HashMap<>();
         for (FileSearchResponse response : searchResults) {
             FilenameAndIp resourceInfo = new FilenameAndIp(response.getFilename(), response.getSourceIp());
             if (fileAndAddress.containsKey(resourceInfo)) {
@@ -194,39 +206,43 @@ public class UIPage {
                 fileAndAddress.put(resourceInfo, list);
             }
         }
+        return fileAndAddress;
     }
 
     /**
      * judge whether a list contain all file parts or not
+     * if the file is complete,return the size
      *
      * @param list
-     * @return
+     * @return size of the file
      */
-    private static boolean containAllFiles(List<FileSearchResponse> list) {
+    private static long containAllFiles(List<FileSearchResponse> list) {
         if (list == null || list.size() == 0) {
-            return false;
+            return -1;
         }
 
         int total = list.get(0).getTotalPart();
 
         // just have one file
-        if (total == 1){
-            return true;
+        if (total == 1) {
+            return list.get(0).getSize();
         }
 
 
+        long totalSize = 0;
         Set<Integer> allpart = new HashSet<>();
         for (int i = 1; i <= total; i++) {
             allpart.add(i);
         }
 
         for (FileSearchResponse response : list) {
-            if(allpart.contains(response.getPart())) {
+            if (allpart.contains(response.getPart())) {
                 allpart.remove(response.getPart());
+                totalSize += response.getSize();
             }
         }
 
-        return allpart.size() == 0;
+        return allpart.size() != 0 ? -1 : totalSize;
     }
 
     /**
