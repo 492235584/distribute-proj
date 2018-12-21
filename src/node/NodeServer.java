@@ -1,9 +1,9 @@
 package node;
 
+import node.requestpojo.DistributeCalculateMessage;
 import node.requestpojo.FileDownloadMessage;
 import node.requestpojo.FileSaveMessage;
 import node.requestpojo.FileSearchMessage;
-import node.requestpojo.caculateCallingMessage;
 import rpc.handler.*;
 import rpc.server.RPCServer;
 
@@ -15,7 +15,7 @@ public class NodeServer {
                 service("download", FileDownloadMessage.class, new FileDownloadServerHandler()).
                 service("searchFile", FileSearchMessage.class, new FileSearchServerHandler()).
                 service("holdFile", FileSearchMessage.class, new FileHoldServerHandler()).
-                service("callingTimes", caculateCallingMessage.class,new caculateCallingHandler());
+                service("distributeCalculate", DistributeCalculateMessage.class,new DistributeCalculateHandler());
         server.start();
     }
 }

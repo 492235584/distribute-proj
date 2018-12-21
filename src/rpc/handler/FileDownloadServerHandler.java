@@ -2,10 +2,12 @@ package rpc.handler;
 
 import io.netty.channel.ChannelHandlerContext;
 import node.NodeClient;
+import node.NodeContext;
 import node.requestpojo.FileDownloadMessage;
 import node.requestpojo.FileSaveMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rpc.client.RPCClient;
 import rpc.common.IMessageHandler;
 import rpc.common.MessageOutput;
 import rpc.common.RequestId;
@@ -46,9 +48,20 @@ public class FileDownloadServerHandler implements IMessageHandler<FileDownloadMe
         byte[] bytes = readFile(DIR_PATH + "/" + filename);
         /** send **/
         String messageId = RequestId.next();
+
+        boolean isTmp = false;
         NodeClient client = neighbors.get(ip);
+        if (client == null) {
+            isTmp = true;
+            client = new NodeClient(new RPCClient(ip, NodeContext.SERVER_POST));
+        }
         FileSaveMessage message = new FileSaveMessage(messageId, filename, null, bytes);
         client.saveFile(message);
+
+        // if client is temporary
+        if (isTmp) {
+            client.close();
+        }
     }
 }
 

@@ -12,7 +12,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
 import java.util.List;
-
 import static node.NodeContext.*;
 
 public class UIPage {
@@ -32,6 +31,19 @@ public class UIPage {
     }
 
     public static void initUI() {
+        try
+        {
+            // 是windows
+            if (System.getProperty("os.name").toUpperCase().indexOf("WINDOWS") != -1)
+            {
+                UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+            }
+        } catch (Exception e)
+        {
+            System.out.println("设置界面感官异常!");
+            e.printStackTrace();
+        }
+
         //3.在initUI方法中，实例化JFrame类的对象。
         JFrame frame = new JFrame("分布式系统");
         frame.setBackground(Color.white);
@@ -91,13 +103,13 @@ public class UIPage {
                 if (JFileChooser.APPROVE_OPTION == returnVal) {
                     //打印出文件的路径，你可以修改位 把路径值 写到 textField 中
                     System.out.println(fDialog.getSelectedFile());
-                    uploadFile(fDialog.getSelectedFile().toString());
+                    if(fDialog.getSelectedFile()!=null)
+                        uploadFile(fDialog.getSelectedFile().toString());
                 }
             }
         });
 
         mainPanel.add(panel, BorderLayout.WEST);
-
 
         JPanel panel2 = new JPanel();
         panel2.setLayout(new BorderLayout());
@@ -117,9 +129,10 @@ public class UIPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String key = JOptionPane.showInputDialog("Please input filename");
-                Set<FileSearchResponse> searchResults = searchFile(key);
-                if (key != null)
+                if (key != null){
+                    Set<FileSearchResponse> searchResults = searchFile(key);
                     generateTable(searchResults);
+                }
             }
         });
 
@@ -147,6 +160,8 @@ public class UIPage {
     }
 
     public static void generateTable(Set<FileSearchResponse> result) {
+        HashMap<Integer,List<FileSearchResponse>> list=new HashMap<>();
+
         JFrame tableframe = new JFrame("searchResults");
         Table_Model model = new Table_Model();
         JTable table = new JTable(model);
@@ -158,6 +173,12 @@ public class UIPage {
                 MyButton button = (MyButton) e.getSource();
                 //打印被点击的行和列
                 System.out.println("row:" + button.getRow() + "column :" + button.getColumn());
+                if(button.getColumn()==3)
+                    download(list.get(button.getRow()));
+                else if(button.getColumn()==4){
+
+                }
+
             }
         };
 
@@ -171,12 +192,16 @@ public class UIPage {
 
         /**--------*/
         HashMap<FilenameAndIp, List<FileSearchResponse>> fileAndAddress = splitResponse(result);
+        int i = 0;
         for (Map.Entry<FilenameAndIp, List<FileSearchResponse>> entry : fileAndAddress.entrySet()) {
             long size = containAllFiles(entry.getValue());
             if (size > 0) {
                 FilenameAndIp info = entry.getKey();
                 model.addRow(info.getFilename(), info.getIp(), String.valueOf(size));
+
+                list.put(i,entry.getValue());
             }
+            i++;
         }
 
 
@@ -308,7 +333,3 @@ public class UIPage {
         }
     }
 }
-
-
-
-
