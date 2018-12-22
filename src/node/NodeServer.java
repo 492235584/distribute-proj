@@ -14,7 +14,7 @@ public class NodeServer {
                 service("save", FileSaveMessage.class, new FileSaveServerHandler()).
                 service("download", FileDownloadMessage.class, new FileDownloadServerHandler()).
                 service("searchFile", FileSearchMessage.class, new FileSearchServerHandler()).
-                service("holdFile", FileSearchMessage.class, new FileHoldServerHandler()).
+                service("link", String.class, new NodeLinkServerHandler()).
                 service("distributeCalculate", DistributeCalculateMessage.class,new DistributeCalculateHandler());
         server.start();
     }

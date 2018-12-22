@@ -79,6 +79,8 @@ public class NodeContext {
                 NodeClient client = new NodeClient(new RPCClient(ip, SERVER_POST));
                 neighbors.put(ip, client);
                 linkNum++;
+                messageId = RequestId.next();
+                client.link(messageId);
             }
         }
     }
@@ -314,35 +316,6 @@ public class NodeContext {
         }
         return bytes;
     }
-
-    /**
-     * set file can't read when update
-     *
-     * @param filename
-     */
-    public static void holdWhenUpdate(String filename) {
-        String messageId = RequestId.next();
-        holdWhenUpdate(filename, messageId);
-    }
-
-
-    /**
-     * set file can't read when update
-     *
-     * @param filename
-     * @param messageId special messageId
-     */
-    public static void holdWhenUpdate(String filename, String messageId) {
-        if (filenameAndStatus.containsKey(filename)) {
-            filenameAndStatus.put(filename, false);
-        }
-
-        // hold neighbors
-        for (Map.Entry<String, NodeClient> n : neighbors.entrySet()) {
-            n.getValue().holdFile(new FileSearchMessage(messageId, filename));
-        }
-    }
-
 
     private static long getFileSize(String filename) {
         File f = new File(NodeContext.DIR_PATH + "/" + filename);

@@ -58,8 +58,6 @@ public class MessageCollector extends ChannelInboundHandlerAdapter {
 	public void channelActive(ChannelHandlerContext ctx) throws Exception {
 		String clientIp = getIp(ctx);
 		LOG.info("connection comes : " + clientIp);
-		NodeClient.start(clientIp, NodeContext.SERVER_POST);
-		LOG.info("build connect to " + clientIp);
 	}
 
 	@Override
@@ -99,7 +97,7 @@ public class MessageCollector extends ChannelInboundHandlerAdapter {
 		LOG.warn("connection error", cause);
 	}
 
-	private  String getIp(ChannelHandlerContext ctx){
+	private String getIp(ChannelHandlerContext ctx){
 		String ipString = "";
 		String socketString = ctx.channel().remoteAddress().toString();
 		int colonAt = socketString.indexOf(":");

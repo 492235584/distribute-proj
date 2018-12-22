@@ -480,3 +480,9 @@ Caused by: java.net.ConnectException: Connection refused
 2018-12-21 21:32:55,501 - start send file : 127.0.0.1-=-ttt
 2018-12-21 21:32:55,503 - connection comes : 100.66.216.212
 2018-12-21 21:32:55,503 - build connect to 100.66.216.212
+2018-12-21 21:46:27,445 - local IP : 100.66.216.212
+2018-12-21 21:46:27,829 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0xf559c704]'
+2018-12-21 21:46:27,843 - server started @ 100.66.216.212:45455
+
+2018-12-21 21:46:28,449 - connection comes : 100.66.228.198
+2018-12-21 21:46:28,450 - build connect to 100.66.228.198

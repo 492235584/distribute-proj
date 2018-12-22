@@ -29,7 +29,7 @@ public class NodeClient {
                 rpc("save_res", Boolean.class).
                 rpc("searchFile_res", Set.class).
                 rpc("download_res", Boolean.class).
-                rpc("holdFile_res", Boolean.class).
+                rpc("link_res", Boolean.class).
                 rpc("distributeCalculate_res", List.class);
     }
 
@@ -43,9 +43,9 @@ public class NodeClient {
         return (Set<FileSearchResponse>) client.send("searchFile", message);
     }
 
-    public Set<FileSearchResponse> holdFile(FileSearchMessage message) {
-        messageSearched.put(message.getMessageId(), 1);
-        return (Set<FileSearchResponse>) client.send("holdFile", message);
+    public boolean link(String messageId) {
+        messageSearched.put(messageId, 1);
+        return client.send("link", messageId);
     }
 
     public Boolean saveFile(FileSaveMessage message) {
