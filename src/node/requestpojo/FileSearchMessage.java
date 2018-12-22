@@ -8,6 +8,12 @@ public class FileSearchMessage {
     private List<String> searched;
     private String key;
 
+    public FileSearchMessage(String messageId, List<String> searched, String key) {
+        this.messageId = messageId;
+        this.searched = searched;
+        this.key = key;
+    }
+
     public FileSearchMessage(String messageId, String key) {
         this.messageId = messageId;
         searched = new ArrayList<>();

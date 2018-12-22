@@ -252,7 +252,9 @@ public class NodeContext {
      */
     public static Set<FileSearchResponse> searchFile(String key) {
         String messageId = RequestId.next();
-        return searchFile(messageId, key, null);
+        List<String> searched = new ArrayList<>();
+        searched.add(LOCAL_IP);
+        return searchFile(messageId, key, searched);
     }
 
     /**
@@ -278,7 +280,7 @@ public class NodeContext {
                 continue;
             }
 
-            Set<FileSearchResponse> find = n.getValue().searchFile(new FileSearchMessage(messageId, key));
+            Set<FileSearchResponse> find = n.getValue().searchFile(new FileSearchMessage(messageId, searched, key));
             if (find != null) {
                 files.addAll(find);
             }
