@@ -37,9 +37,9 @@ public class FileDownloadServerHandler implements IMessageHandler<FileDownloadMe
         messageSearched.put(messageId, 1);
 
         // download
-        LOG.info("start send file : " + filename);
+        LOG.info("start download file : " + filename);
         download(filename, requestIp);
-        LOG.info("file send complete: " + filename);
+        LOG.info("file download complete: " + filename);
         ctx.writeAndFlush(new MessageOutput(requestId, "save_res", true));
     }
 

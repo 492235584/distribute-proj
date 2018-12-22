@@ -104,7 +104,6 @@ public class UIPage {
                 // 如果是选择了文件
                 if (JFileChooser.APPROVE_OPTION == returnVal) {
                     //打印出文件的路径，你可以修改位 把路径值 写到 textField 中
-                    System.out.println(fDialog.getSelectedFile());
                     if(fDialog.getSelectedFile()!=null)
                         uploadFile(fDialog.getSelectedFile().toString());
                 }
@@ -174,7 +173,6 @@ public class UIPage {
             public void invoke(ActionEvent e) {
                 MyButton button = (MyButton) e.getSource();
                 //打印被点击的行和列
-                System.out.println("row:" + button.getRow() + "column :" + button.getColumn());
                 if(button.getColumn()==3)
                     download(list.get(button.getRow()));
                 else if(button.getColumn()==4){

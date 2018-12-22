@@ -20,7 +20,6 @@ public class FileSearchResponse {
     }
 
     public FileSearchResponse(String saveIp, String filename, long size) {
-        System.out.println(filename);
         String[] strs = filename.split(NodeContext.NAMESPLIT);
         this.sourceIp = strs[0];
         this.filename = strs[1];

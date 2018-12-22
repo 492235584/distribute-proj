@@ -966,3 +966,201 @@ Caused by: java.net.ConnectException: Connection refused
 
 2018-12-22 16:13:49,566 - connection comes : 100.66.228.198
 2018-12-22 16:13:49,641 - connection comes : 100.67.24.99
+2018-12-22 16:17:51,294 - local IP : 100.66.216.212
+2018-12-22 16:17:51,656 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x74ae2133]'
+2018-12-22 16:17:51,669 - server started @ 100.66.216.212:45455
+
+2018-12-22 16:17:52,000 - connection comes : 100.66.228.198
+2018-12-22 16:17:52,056 - start link 100.66.228.198
+2018-12-22 16:17:52,056 - link complete
+2018-12-22 16:17:52,070 - connection comes : 100.67.24.99
+2018-12-22 16:18:07,171 - connection comes : 100.66.216.212
+2018-12-22 16:18:07,176 - start send file : 192.168.31.215-=-thyroid.zip
+2018-12-22 16:18:09,722 - connection comes : 100.66.216.212
+2018-12-22 16:26:40,081 - connection error
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:656)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:591)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:508)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:470)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:909)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+2018-12-22 16:30:28,979 - local IP : 100.66.216.212
+2018-12-22 16:30:29,337 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x163f7af7]'
+2018-12-22 16:30:29,350 - server started @ 100.66.216.212:45455
+
+2018-12-22 16:30:29,715 - connection comes : 100.66.228.198
+2018-12-22 16:30:29,750 - start link 100.66.228.198
+2018-12-22 16:30:29,750 - link complete
+2018-12-22 16:30:29,898 - connection comes : 100.67.24.99
+2018-12-22 16:30:29,919 - start link 100.67.24.99
+2018-12-22 16:30:29,919 - link complete
+2018-12-22 16:31:02,887 - local IP : 100.66.216.212
+2018-12-22 16:31:03,094 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x791df021]'
+2018-12-22 16:31:03,110 - server started @ 100.66.216.212:45455
+
+2018-12-22 16:31:03,586 - connection comes : 100.67.24.99
+2018-12-22 16:31:04,109 - connection comes : 100.66.228.198
+2018-12-22 16:32:25,383 - connection error
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:656)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:591)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:508)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:470)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:909)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+2018-12-22 16:33:10,236 - local IP : 100.66.216.212
+2018-12-22 16:33:10,641 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x8ae28fe7]'
+2018-12-22 16:33:10,655 - server started @ 100.66.216.212:45455
+
+2018-12-22 16:33:11,004 - connection comes : 100.66.228.198
+2018-12-22 16:33:11,045 - start link 100.66.228.198
+2018-12-22 16:33:11,046 - link complete
+2018-12-22 16:33:11,171 - connection comes : 100.67.24.99
+2018-12-22 16:33:11,178 - start link 100.67.24.99
+2018-12-22 16:33:11,178 - link complete
+2018-12-22 16:34:48,856 - local IP : 100.66.216.212
+2018-12-22 16:34:49,097 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x003ba1e8]'
+2018-12-22 16:34:49,111 - server started @ 100.66.216.212:45455
+
+2018-12-22 16:34:49,894 - connection comes : 100.66.228.198
+2018-12-22 16:36:15,176 - connection comes : 100.67.24.99
+2018-12-22 16:36:15,196 - start link 100.67.24.99
+2018-12-22 16:36:15,196 - link complete
+2018-12-22 16:36:36,304 - local IP : 100.66.216.212
+2018-12-22 16:36:36,545 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0xdc72cbed]'
+2018-12-22 16:36:36,559 - server started @ 100.66.216.212:45455
+
+2018-12-22 16:36:36,916 - connection comes : 100.66.228.198
+2018-12-22 16:36:37,101 - connection comes : 100.67.24.99
+2018-12-22 16:37:22,231 - local IP : 100.66.216.212
+2018-12-22 16:37:22,477 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0xacb33ab6]'
+2018-12-22 16:37:22,492 - server started @ 100.66.216.212:45455
+
+2018-12-22 16:37:22,806 - connection comes : 100.66.228.198
+2018-12-22 16:37:22,917 - connection comes : 100.67.24.99
+2018-12-22 16:37:51,696 - local IP : 100.66.216.212
+2018-12-22 16:37:51,939 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0xb9f1989e]'
+2018-12-22 16:37:51,954 - server started @ 100.66.216.212:45455
+
+2018-12-22 16:37:52,262 - connection comes : 100.66.228.198
+2018-12-22 16:37:52,357 - connection comes : 100.67.24.99
+2018-12-22 16:41:37,216 - connection error
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:656)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:591)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:508)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:470)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:909)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+2018-12-22 16:41:37,296 - start search file
+2018-12-22 16:42:08,150 - connect 100.66.228.198:45455 failure
+io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /100.66.228.198:45455
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:644)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:591)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:508)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:470)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:909)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	... 11 more
+2018-12-22 16:42:10,165 - connect 100.66.228.198:45455 failure
+io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /100.66.228.198:45455
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:644)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:591)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:508)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:470)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:909)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	... 11 more
+2018-12-22 16:42:36,092 - local IP : 100.66.216.212
+2018-12-22 16:42:36,496 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x647f0de2]'
+2018-12-22 16:42:36,511 - server started @ 100.66.216.212:45455
+
+2018-12-22 16:42:36,819 - connection comes : 100.66.228.198
+2018-12-22 16:42:36,856 - start link 100.66.228.198
+2018-12-22 16:42:36,856 - link complete
+2018-12-22 16:42:36,956 - connection comes : 100.67.24.99
+2018-12-22 16:42:36,970 - start link 100.67.24.99
+2018-12-22 16:42:36,971 - link complete
+2018-12-22 16:43:49,437 - local IP : 100.66.216.212
+2018-12-22 16:43:49,695 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x8d0d08c4]'
+2018-12-22 16:43:49,711 - server started @ 100.66.216.212:45455
+
+2018-12-22 16:43:49,842 - connection comes : 100.66.228.198
+2018-12-22 16:44:02,737 - connection comes : 100.67.24.99
+2018-12-22 16:48:23,827 - connection comes : 100.64.202.111
+2018-12-22 16:48:28,144 - connection error
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:656)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:591)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:508)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:470)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:909)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+2018-12-22 16:53:43,849 - local IP : 100.66.216.212
+2018-12-22 16:53:44,245 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0xbb0bdebb]'
+2018-12-22 16:53:44,259 - server started @ 100.66.216.212:45455
+
+2018-12-22 16:53:44,292 - connection comes : 100.66.228.198
+2018-12-22 16:53:57,658 - local IP : 100.66.216.212
+2018-12-22 16:53:57,867 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x12c96745]'
+2018-12-22 16:53:57,882 - server started @ 100.66.216.212:45455
+
+2018-12-22 16:53:58,538 - connection comes : 100.66.228.198
+2018-12-22 16:54:04,348 - local IP : 100.66.216.212
+2018-12-22 16:54:04,602 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x37996378]'
+2018-12-22 16:54:04,617 - server started @ 100.66.216.212:45455
+
+2018-12-22 16:54:04,872 - connection comes : 100.66.228.198
