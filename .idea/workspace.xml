@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4d60cc5-6d2f-4d0f-86ba-3e642c3b5288" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/notify-subscription.log" afterPath="$PROJECT_DIR$/logs/notify-subscription.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/log4j.properties" afterPath="$PROJECT_DIR$/src/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/NodeContext.java" afterPath="$PROJECT_DIR$/src/node/NodeContext.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/NodeServer.java" afterPath="$PROJECT_DIR$/src/node/NodeServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/UI/UIPage.java" afterPath="$PROJECT_DIR$/src/node/UI/UIPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/requestpojo/FileSearchMessage.java" afterPath="$PROJECT_DIR$/src/node/requestpojo/FileSearchMessage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rpc/handler/FileSearchServerHandler.java" afterPath="$PROJECT_DIR$/src/rpc/handler/FileSearchServerHandler.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,11 +17,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="NodeContext.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NodeContext.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/node/NodeContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="278" column="13" lean-forward="true" selection-start-line="278" selection-start-column="13" selection-end-line="278" selection-end-column="13" />
+            <state relative-caret-position="406">
+              <caret line="282" column="35" lean-forward="true" selection-start-line="282" selection-start-column="35" selection-end-line="282" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileSearchServerHandler.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FileSearchServerHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/rpc/handler/FileSearchServerHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="32" column="51" lean-forward="false" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
+            <state relative-caret-position="135">
+              <caret line="22" column="43" lean-forward="true" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -210,8 +206,8 @@
         <option value="$PROJECT_DIR$/src/node/UI/UIPage.java" />
         <option value="$PROJECT_DIR$/src/node/NodeServer.java" />
         <option value="$PROJECT_DIR$/src/node/requestpojo/FileSearchMessage.java" />
-        <option value="$PROJECT_DIR$/src/rpc/handler/FileSearchServerHandler.java" />
         <option value="$PROJECT_DIR$/src/node/NodeContext.java" />
+        <option value="$PROJECT_DIR$/src/rpc/handler/FileSearchServerHandler.java" />
       </list>
     </option>
   </component>
@@ -1153,12 +1149,12 @@
       <workItem from="1545313313385" duration="2821000" />
       <workItem from="1545376036953" duration="9001000" />
       <workItem from="1545399997194" duration="3430000" />
-      <workItem from="1545458181811" duration="16306000" />
+      <workItem from="1545458181811" duration="16568000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43721000" />
+    <option name="totallyTimeSpent" value="43983000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="39" width="1440" height="831" extended-state="0" />
@@ -1225,7 +1221,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/rpc/handler/FileSearchServerHandler.java</url>
-          <line>28</line>
+          <line>30</line>
           <properties />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
@@ -1273,7 +1269,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/rpc/handler/FileSearchServerHandler.java</url>
-          <line>20</line>
+          <line>23</line>
           <properties />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
@@ -1664,21 +1660,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/rpc/handler/FileSearchServerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="32" column="51" lean-forward="false" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/node/NodeContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="278" column="13" lean-forward="true" selection-start-line="278" selection-start-column="13" selection-end-line="278" selection-end-column="13" />
+        <state relative-caret-position="406">
+          <caret line="282" column="35" lean-forward="true" selection-start-line="282" selection-start-column="35" selection-end-line="282" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rpc/handler/FileSearchServerHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="22" column="43" lean-forward="true" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
