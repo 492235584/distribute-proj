@@ -10,6 +10,15 @@ public class FileSearchResponse {
     private int totalPart = 1;
     private int part = 1;
 
+    public FileSearchResponse(String saveIp, long size, String filename, String sourceIp, int totalPart, int part) {
+        this.saveIp = saveIp;
+        this.size = size;
+        this.filename = filename;
+        this.sourceIp = sourceIp;
+        this.totalPart = totalPart;
+        this.part = part;
+    }
+
     public FileSearchResponse(String saveIp, String filename, long size) {
         System.out.println(filename);
         String[] strs = filename.split(NodeContext.NAMESPLIT);
@@ -32,20 +41,20 @@ public class FileSearchResponse {
         this.saveIp = saveIp;
     }
 
-    public String getFilename() {
-        return filename;
-    }
-
-    public void setFilename(String filename) {
-        this.filename = filename;
-    }
-
     public long getSize() {
         return size;
     }
 
     public void setSize(long size) {
         this.size = size;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 
     public String getSourceIp() {

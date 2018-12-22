@@ -1,5 +1,7 @@
 package node;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import node.requestpojo.DistributeCalculateMessage;
 import node.requestpojo.FileDownloadMessage;
 import node.requestpojo.FileSaveMessage;
@@ -8,7 +10,7 @@ import node.responsepojo.FileSearchResponse;
 import rpc.client.RPCClient;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -40,7 +42,16 @@ public class NodeClient {
 
     public Set<FileSearchResponse> searchFile(FileSearchMessage message) {
         messageSearched.put(message.getMessageId(), 1);
-        return (Set<FileSearchResponse>) client.send("searchFile", message);
+        Set<FileSearchResponse> result = new HashSet<>();
+
+        // parse response from Set<JSONObject> to Set<FileSearchResponse>
+        Set<JSONObject> responses = client.send("searchFile", message);
+        for (JSONObject o : responses) {
+            result.add(JSON.parseObject(o.toJSONString(), FileSearchResponse.class
+            ));
+        }
+
+        return result;
     }
 
     public boolean link(String messageId) {
@@ -57,9 +68,10 @@ public class NodeClient {
         return (Boolean) client.send("download", message);
     }
 
-    public ArrayList distributeCalculate(DistributeCalculateMessage message){
-        return (ArrayList) client.send("distributeCalculate",message);
+    public ArrayList distributeCalculate(DistributeCalculateMessage message) {
+        return (ArrayList) client.send("distributeCalculate", message);
     }
+
     /**
      * build a connect to serverIp:port
      *
