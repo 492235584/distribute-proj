@@ -8,6 +8,7 @@ import node.requestpojo.FileSaveMessage;
 import node.requestpojo.FileSearchMessage;
 import node.responsepojo.FileSearchResponse;
 import rpc.client.RPCClient;
+import rpc.common.RequestId;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -88,6 +89,8 @@ public class NodeClient {
             }
             NodeClient client = new NodeClient(new RPCClient(serverIp, port));
             neighbors.put(serverIp, client);
+            String messageId = RequestId.next();
+            client.link(messageId);
         }
     }
 

@@ -817,3 +817,11 @@ Caused by: java.net.ConnectException: Connection refused
 2018-12-22 15:14:58,463 - start save file : 100.66.216.212-=-black.png
 2018-12-22 15:14:58,464 - file save complete : 100.66.216.212-=-black.png
 2018-12-22 15:14:58,475 - download complete : 100.66.216.212-=-black.png
+2018-12-22 15:52:44,320 - local IP : 192.168.31.215
+2018-12-22 15:52:45,314 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x25dc1b71]'
+2018-12-22 15:52:45,327 - server started @ 192.168.31.215:45455
+
+2018-12-22 15:54:25,004 - local IP : 192.168.31.215
+2018-12-22 15:54:25,214 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x108de479]'
+2018-12-22 15:54:25,229 - server started @ 192.168.31.215:45455
+

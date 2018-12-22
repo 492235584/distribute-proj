@@ -26,6 +26,8 @@ public class UIPage {
     public static void initNode() {
         NodeServer.start(NodeContext.LOCAL_IP);
         NodeClient.start(NodeContext.START_IP, NodeContext.SERVER_POST);
+
+
         buildTopology();
         System.out.println(neighbors);
     }
@@ -331,5 +333,14 @@ public class UIPage {
                 NodeContext.filenameAndStatus.remove(response.completeName());
             }
         }
+    }
+
+    /**
+     * update file in list
+     *
+     * @param list
+     */
+    private static void update(List<FileSearchResponse> list) {
+        return;
     }
 }
