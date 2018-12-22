@@ -72,7 +72,7 @@ public class FileSearchResponse {
         this.part = part;
     }
 
-    public String getCompleteName() {
+    public String completeName() {
         String name = sourceIp + NodeContext.NAMESPLIT + filename;
         if (totalPart > 1) {
             name = name + NodeContext.NAMESPLIT + totalPart + NodeContext.NAMESPLIT + part;

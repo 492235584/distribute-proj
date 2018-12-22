@@ -283,7 +283,7 @@ public class UIPage {
         // single file
         if (list.get(0).getTotalPart() == 1) {
             FileSearchResponse response = list.get(0);
-            NodeContext.downloadFile(response.getCompleteName(), response.getSaveIp());
+            NodeContext.downloadFile(response.completeName(), response.getSaveIp());
         } else { // totalPart > 1
             int total = list.get(0).getTotalPart();
             Map<Integer, FileSearchResponse> parts = new TreeMap<>();
@@ -295,14 +295,14 @@ public class UIPage {
 
             // download every parts
             for (FileSearchResponse response : parts.values()) {
-                NodeContext.downloadFile(response.getCompleteName(), response.getSaveIp());
+                NodeContext.downloadFile(response.completeName(), response.getSaveIp());
             }
 
             // combine all parts to a file
             byte[][] splitedDatas = new byte[parts.size()][];
             for (FileSearchResponse response : parts.values()) {
                 // wait until received file
-                while (!NodeContext.filenameAndStatus.containsKey(response.getCompleteName())) {
+                while (!NodeContext.filenameAndStatus.containsKey(response.completeName())) {
                     try {
                         Thread.sleep(100);
                     } catch (InterruptedException e) {
@@ -310,7 +310,7 @@ public class UIPage {
                     }
                 }
                 // read part
-                byte[] datas = NodeContext.readFile(response.getCompleteName());
+                byte[] datas = NodeContext.readFile(response.completeName());
                 splitedDatas[response.getPart()] = datas;
             }
             List<Byte> allData = new ArrayList<>();
@@ -328,7 +328,7 @@ public class UIPage {
             NodeContext.saveFile(list.get(0).getSourceIp() + NodeContext.NAMESPLIT + list.get(0).getFilename(), bytes, null);
             // unpate filenameAndStatus
             for (FileSearchResponse response : parts.values()) {
-                NodeContext.filenameAndStatus.remove(response.getCompleteName());
+                NodeContext.filenameAndStatus.remove(response.completeName());
             }
         }
     }
