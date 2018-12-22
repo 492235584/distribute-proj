@@ -252,7 +252,7 @@ public class NodeContext {
      */
     public static Set<FileSearchResponse> searchFile(String key) {
         String messageId = RequestId.next();
-        return searchFile(messageId, key);
+        return searchFile(messageId, key, null);
     }
 
     /**
@@ -260,7 +260,7 @@ public class NodeContext {
      *
      * @return
      */
-    public static Set<FileSearchResponse> searchFile(String messageId, String key) {
+    public static Set<FileSearchResponse> searchFile(String messageId, String key, List<String> searched) {
         Set<FileSearchResponse> files = new HashSet();
         // add all filename in this node to set
         Enumeration<String> keys = filenameAndStatus.keys();
@@ -273,6 +273,11 @@ public class NodeContext {
 
         // add all neighbor's filename
         for (Map.Entry<String, NodeClient> n : neighbors.entrySet()) {
+            // skip searched node
+            if (searched != null && searched.contains(n.getKey())) {
+                continue;
+            }
+
             Set<FileSearchResponse> find = n.getValue().searchFile(new FileSearchMessage(messageId, key));
             if (find != null) {
                 files.addAll(find);

@@ -338,7 +338,10 @@ public class UIPage {
      *
      * @param list
      */
-    private static void update(List<FileSearchResponse> list) {
+    private static void update(List<FileSearchResponse> list, byte[] bytes) {
+
+
+
         return;
     }
 }
