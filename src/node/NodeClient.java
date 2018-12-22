@@ -47,11 +47,14 @@ public class NodeClient {
 
         // parse response from Set<JSONObject> to Set<FileSearchResponse>
         Set<JSONObject> responses = client.send("searchFile", message);
+        if (responses == null) {
+            return null;
+        }
+
         for (JSONObject o : responses) {
             result.add(JSON.parseObject(o.toJSONString(), FileSearchResponse.class
             ));
         }
-
         return result;
     }
 
