@@ -55,14 +55,14 @@ public class NodeClient {
         return result;
     }
 
-    public boolean link(String messageId) {
+    public void link(String messageId) {
         messageSearched.put(messageId, 1);
-        return client.send("link", messageId);
+        client.send("link", messageId);
     }
 
-    public Boolean saveFile(FileSaveMessage message) {
+    public void saveFile(FileSaveMessage message) {
         messageSearched.put(message.getMessageId(), 1);
-        return (Boolean) client.send("save", message);
+        client.send("save", message);
     }
 
     public Boolean downloadFile(FileDownloadMessage message) {

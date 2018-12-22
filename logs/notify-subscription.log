@@ -825,3 +825,31 @@ Caused by: java.net.ConnectException: Connection refused
 2018-12-22 15:54:25,214 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x108de479]'
 2018-12-22 15:54:25,229 - server started @ 192.168.31.215:45455
 
+2018-12-22 16:04:03,700 - local IP : 192.168.31.215
+2018-12-22 16:04:03,908 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x4592eb92]'
+2018-12-22 16:04:03,922 - server started @ 192.168.31.215:45455
+
+2018-12-22 16:05:20,591 - local IP : 100.66.216.212
+2018-12-22 16:05:20,800 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0xe1169858]'
+2018-12-22 16:05:20,816 - server started @ 100.66.216.212:45455
+
+2018-12-22 16:05:22,372 - connection comes : 100.66.228.198
+2018-12-22 16:05:22,407 - start link 100.66.228.198
+2018-12-22 16:05:22,407 - link complete
+2018-12-22 16:07:01,920 - local IP : 100.66.216.212
+2018-12-22 16:07:02,152 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x092e61de]'
+2018-12-22 16:07:02,165 - server started @ 100.66.216.212:45455
+
+2018-12-22 16:07:03,031 - connection comes : 100.66.228.198
+2018-12-22 16:07:23,262 - local IP : 100.66.216.212
+2018-12-22 16:07:23,466 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x132091bf]'
+2018-12-22 16:07:23,482 - server started @ 100.66.216.212:45455
+
+2018-12-22 16:07:23,895 - connection comes : 100.66.228.198
+2018-12-22 16:07:23,954 - start link 100.66.228.198
+2018-12-22 16:07:23,954 - link complete
+2018-12-22 16:08:46,778 - local IP : 100.66.216.212
+2018-12-22 16:08:47,002 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x61e6167f]'
+2018-12-22 16:08:47,018 - server started @ 100.66.216.212:45455
+
+2018-12-22 16:08:47,377 - connection comes : 100.66.228.198
