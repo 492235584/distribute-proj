@@ -310,8 +310,8 @@ public class UIPage {
                     }
                 }
                 // read part
-                byte[] datas = NodeContext.readFile(response.completeName());
-                splitedDatas[response.getPart()] = datas;
+                byte[] datas = NodeContext.readFile(NodeContext.DIR_PATH + "/" + response.completeName());
+                splitedDatas[response.getPart() - 1] = datas;
             }
             List<Byte> allData = new ArrayList<>();
             for (byte[] datas : splitedDatas) {

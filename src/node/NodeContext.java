@@ -145,7 +145,6 @@ public class NodeContext {
                 n.getValue().saveFile(message);
                 i++;
             }
-
         } else {
             // save file in other nodes
             String messageId = RequestId.next();
