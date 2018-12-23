@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
 import java.util.List;
+
 import static node.NodeContext.*;
 
 public class UIPage {
@@ -33,15 +34,12 @@ public class UIPage {
     }
 
     public static void initUI() {
-        try
-        {
+        try {
             // 是windows
-            if (System.getProperty("os.name").toUpperCase().indexOf("WINDOWS") != -1)
-            {
+            if (System.getProperty("os.name").toUpperCase().indexOf("WINDOWS") != -1) {
                 UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
             }
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
             System.out.println("设置界面感官异常!");
             e.printStackTrace();
         }
@@ -104,7 +102,7 @@ public class UIPage {
                 // 如果是选择了文件
                 if (JFileChooser.APPROVE_OPTION == returnVal) {
                     //打印出文件的路径，你可以修改位 把路径值 写到 textField 中
-                    if(fDialog.getSelectedFile()!=null)
+                    if (fDialog.getSelectedFile() != null)
                         uploadFile(fDialog.getSelectedFile().toString());
                 }
             }
@@ -130,7 +128,7 @@ public class UIPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String key = JOptionPane.showInputDialog("Please input filename");
-                if (key != null){
+                if (key != null) {
                     Set<FileSearchResponse> searchResults = searchFile(key);
                     generateTable(searchResults);
                 }
@@ -161,7 +159,7 @@ public class UIPage {
     }
 
     public static void generateTable(Set<FileSearchResponse> result) {
-        HashMap<Integer,List<FileSearchResponse>> list=new HashMap<>();
+        HashMap<Integer, List<FileSearchResponse>> list = new HashMap<>();
 
         JFrame tableframe = new JFrame("searchResults");
         Table_Model model = new Table_Model();
@@ -173,10 +171,21 @@ public class UIPage {
             public void invoke(ActionEvent e) {
                 MyButton button = (MyButton) e.getSource();
                 //打印被点击的行和列
-                if(button.getColumn()==3)
+                if (button.getColumn() == 3)
                     download(list.get(button.getRow()));
-                else if(button.getColumn()==4){
-
+                else if (button.getColumn() == 4) {
+                    //初始化文件选择框
+                    JFileChooser fDialog = new JFileChooser();
+                    //设置文件选择框的标题
+                    fDialog.setDialogTitle("请选择需要上传的文件");
+                    //弹出选择框
+                    int returnVal = fDialog.showOpenDialog(null);
+                    // 如果是选择了文件
+                    if (JFileChooser.APPROVE_OPTION == returnVal) {
+                        //打印出文件的路径，你可以修改位 把路径值 写到 textField 中
+                        if (fDialog.getSelectedFile() != null)
+                            update(fDialog.getSelectedFile().toString(), list.get(button.getRow()));
+                    }
                 }
 
             }
@@ -199,12 +208,10 @@ public class UIPage {
                 FilenameAndIp info = entry.getKey();
                 model.addRow(info.getFilename(), info.getIp(), String.valueOf(size));
 
-                list.put(i,entry.getValue());
+                list.put(i, entry.getValue());
             }
             i++;
         }
-
-
 
 
         JScrollPane s_pan = new JScrollPane(table);
@@ -252,7 +259,6 @@ public class UIPage {
         if (total == 1) {
             return list.get(0).getSize();
         }
-
 
         long totalSize = 0;
         Set<Integer> allpart = new HashSet<>();
@@ -310,8 +316,8 @@ public class UIPage {
                     }
                 }
                 // read part
-                byte[] datas = NodeContext.readFile(NodeContext.DIR_PATH + "/" + response.completeName());
-                splitedDatas[response.getPart() - 1] = datas;
+                byte[] datas = NodeContext.readFile(response.completeName());
+                splitedDatas[response.getPart()] = datas;
             }
             List<Byte> allData = new ArrayList<>();
             for (byte[] datas : splitedDatas) {
@@ -338,10 +344,11 @@ public class UIPage {
      *
      * @param list
      */
-    private static void update(List<FileSearchResponse> list, byte[] bytes) {
+    private static void update(String newfile, List<FileSearchResponse> list) {
         if (list == null || list.size() == 0) {
             return;
         }
+        byte[] bytes = NodeContext.readFile(newfile);
         int byteNum = bytes.length / list.size();
         for (FileSearchResponse response : list) {
             if (response.getTotalPart() == 1) {
