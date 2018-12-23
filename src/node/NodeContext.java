@@ -213,6 +213,7 @@ public class NodeContext {
 
         if (client.downloadFile(message)) {
             LOG.info("download complete : " + filename);
+            filenameAndStatus.put(filename, true);
         } else {
             LOG.info("download failed : " + filename);
         }
