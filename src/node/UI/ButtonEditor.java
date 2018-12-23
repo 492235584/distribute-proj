@@ -5,16 +5,15 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ButtonEditor extends DefaultCellEditor{
+public class ButtonEditor extends DefaultCellEditor {
     private MyButton button;
-
     private MyEvent event;
 
     public ButtonEditor() {
         super(new JTextField());
     }
 
-    public ButtonEditor(MyEvent e,String name) {
+    public ButtonEditor(MyEvent e, String name) {
         this();
         this.event = e;
         button = new MyButton(name);
@@ -27,6 +26,7 @@ public class ButtonEditor extends DefaultCellEditor{
 
         });
     }
+
     /*
     重写编辑器方法，返回一个按钮给JTable
     */

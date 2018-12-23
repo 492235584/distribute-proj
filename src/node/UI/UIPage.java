@@ -203,8 +203,11 @@ public class UIPage {
 
         tcm.getColumn(4).setCellRenderer(new ButtonRender("update"));
         tcm.getColumn(4).setCellEditor(new ButtonEditor(e, "update"));
-        //禁止表格的选择功能,不然在点击按钮时表格的整行都会被选中
-        table.setRowSelectionAllowed(false);
+        table.selectAll();
+        JScrollPane s_pan = new JScrollPane(table);
+        tableframe.getContentPane().add(s_pan);
+        tableframe.setSize(600, 600);
+        tableframe.setVisible(true);
 
         /**--------*/
         HashMap<FilenameAndIp, List<FileSearchResponse>> fileAndAddress = splitResponse(result);
@@ -219,14 +222,6 @@ public class UIPage {
             }
             i++;
         }
-
-
-        JScrollPane s_pan = new JScrollPane(table);
-
-        tableframe.getContentPane().add(s_pan, BorderLayout.CENTER);
-
-        tableframe.setSize(500, 500);
-        tableframe.setVisible(true);
     }
 
     /**

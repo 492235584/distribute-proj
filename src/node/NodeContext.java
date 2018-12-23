@@ -21,7 +21,7 @@ public class NodeContext {
     public static final String DIR_PATH = "files";
     private static final Logger LOG = LoggerFactory.getLogger(NodeContext.class);
     // first node to link
-    public static final String START_IP = "100.66.228.198";
+    public static final String START_IP = "100.67.24.99";
     public static final int SERVER_POST = 45455;
     // this node's LOCAL_IP
     public static final String LOCAL_IP = getLocalHostLANIp();
