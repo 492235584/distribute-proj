@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4d60cc5-6d2f-4d0f-86ba-3e642c3b5288" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jcommon-1.0.24.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jfreechart-1.0.19.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jcommon_1_0_24.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/node/responsepojo/CalculationResultResponse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/distribute-proj.iml" afterPath="$PROJECT_DIR$/distribute-proj.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/notify-subscription.log" afterPath="$PROJECT_DIR$/logs/notify-subscription.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/DistributeCalculation.java" afterPath="$PROJECT_DIR$/src/node/DistributeCalculation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/NodeClient.java" afterPath="$PROJECT_DIR$/src/node/NodeClient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/NodeContext.java" afterPath="$PROJECT_DIR$/src/node/NodeContext.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/UI/UIPage.java" afterPath="$PROJECT_DIR$/src/node/UI/UIPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rpc/handler/DistributeCalculateHandler.java" afterPath="$PROJECT_DIR$/src/rpc/handler/DistributeCalculateHandler.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +25,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="NodeContext.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NodeContext.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/node/NodeContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5901">
-              <caret line="385" column="54" lean-forward="true" selection-start-line="385" selection-start-column="54" selection-end-line="385" selection-end-column="54" />
+            <state relative-caret-position="349">
+              <caret line="28" column="20" lean-forward="true" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -30,36 +37,56 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="DistributeCalculation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/node/DistributeCalculation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="58" column="66" lean-forward="false" selection-start-line="58" selection-start-column="66" selection-end-line="58" selection-end-column="66" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DistributeCalculateHandler.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/rpc/handler/DistributeCalculateHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="NodeClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/node/NodeClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="121" column="25" lean-forward="true" selection-start-line="121" selection-start-column="25" selection-end-line="121" selection-end-column="25" />
+            <state relative-caret-position="48">
+              <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding>
-                <element signature="e#3648#3649#0" expanded="true" />
+                <element signature="e#3747#3748#0" expanded="true" />
+                <element signature="e#3777#3778#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UIPage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/node/UI/UIPage.java">
+      <file leaf-file-name="CalculationResultResponse.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/node/responsepojo/CalculationResultResponse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="383" column="9" lean-forward="true" selection-start-line="383" selection-start-column="9" selection-end-line="383" selection-end-column="9" />
-              <folding>
-                <element signature="e#6381#7378#0" expanded="true" />
-                <element signature="e#7377#7378#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="187">
+              <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConcurrentHashMap.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/util/concurrent/ConcurrentHashMap.java">
+      <file leaf-file-name="NodeServer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/node/NodeServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="1228" column="27" lean-forward="false" selection-start-line="1228" selection-start-column="27" selection-end-line="1228" selection-end-column="27" />
+            <state relative-caret-position="204">
+              <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -89,36 +116,8 @@
         <entry file="file://$PROJECT_DIR$/src/rpc/handler/NodeQuitServerHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="260">
-              <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+              <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefaultTableModel.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/javax/swing/table/DefaultTableModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="157" column="11" lean-forward="false" selection-start-line="157" selection-start-column="11" selection-end-line="157" selection-end-column="11" />
-              <folding>
-                <element signature="e#4946#4947#0" expanded="true" />
-                <element signature="e#4994#4995#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tabel_Model.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/node/UI/Tabel_Model.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-              <folding>
-                <element signature="e#354#355#0" expanded="true" />
-                <element signature="e#392#393#0" expanded="true" />
-                <element signature="e#914#915#0" expanded="true" />
-                <element signature="e#941#942#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -222,7 +221,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="68" />
+    <option name="y" value="26" />
     <option name="width" value="1440" />
     <option name="height" value="831" />
   </component>
@@ -500,11 +499,11 @@
       <recent name="node.responsepojo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/files" />
-      <recent name="$PROJECT_DIR$/src/node/UI" />
-      <recent name="$PROJECT_DIR$/src/node" />
-      <recent name="$PROJECT_DIR$/src/node/requestpojo" />
       <recent name="$PROJECT_DIR$/src/rpc/handler" />
+      <recent name="$PROJECT_DIR$/src/node/responsepojo" />
+      <recent name="$PROJECT_DIR$/lib" />
+      <recent name="$PROJECT_DIR$/src/node" />
+      <recent name="$PROJECT_DIR$/files" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1155,16 +1154,15 @@
       <workItem from="1545376036953" duration="9001000" />
       <workItem from="1545399997194" duration="3430000" />
       <workItem from="1545458181811" duration="17345000" />
-      <workItem from="1545543843861" duration="20258000" />
+      <workItem from="1545543843861" duration="21158000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65018000" />
+    <option name="totallyTimeSpent" value="65918000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="68" width="1440" height="831" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="26" width="1440" height="831" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1176,7 +1174,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25853017" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6023622" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1265,21 +1263,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/node/DistributeCalculation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/rpc/client/RpcFuture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-142">
-          <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/rpc/server/DefaultHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1392,14 +1375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/node/NodeServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/rpc/server/RPCServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
@@ -1424,14 +1399,6 @@
             <element signature="e#466#467#0" expanded="false" />
             <element signature="e#508#509#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/rpc/handler/DistributeCalculateHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1644,7 +1611,7 @@
     <entry file="file://$PROJECT_DIR$/src/node/UI/UIPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
-          <caret line="383" column="9" lean-forward="true" selection-start-line="383" selection-start-column="9" selection-end-line="383" selection-end-column="9" />
+          <caret line="383" column="9" lean-forward="false" selection-start-line="383" selection-start-column="9" selection-end-line="383" selection-end-column="9" />
           <folding>
             <element signature="e#6381#7378#0" expanded="true" />
             <element signature="e#7377#7378#0" expanded="true" />
@@ -1676,31 +1643,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/node/NodeClient.java">
+    <entry file="file://$PROJECT_DIR$/src/rpc/handler/NodeQuitServerHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="121" column="25" lean-forward="true" selection-start-line="121" selection-start-column="25" selection-end-line="121" selection-end-column="25" />
+        <state relative-caret-position="260">
+          <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/node/responsepojo/CalculationResultResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/node/NodeServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/node/DistributeCalculation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="58" column="66" lean-forward="false" selection-start-line="58" selection-start-column="66" selection-end-line="58" selection-end-column="66" />
           <folding>
-            <element signature="e#3648#3649#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/rpc/handler/NodeQuitServerHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/node/NodeClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-          <folding />
+        <state relative-caret-position="48">
+          <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding>
+            <element signature="e#3747#3748#0" expanded="true" />
+            <element signature="e#3777#3778#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/node/NodeContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5901">
-          <caret line="385" column="54" lean-forward="true" selection-start-line="385" selection-start-column="54" selection-end-line="385" selection-end-column="54" />
+        <state relative-caret-position="349">
+          <caret line="28" column="20" lean-forward="true" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rpc/handler/DistributeCalculateHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

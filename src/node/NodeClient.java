@@ -7,6 +7,7 @@ import node.requestpojo.DistributeCalculateMessage;
 import node.requestpojo.FileDownloadMessage;
 import node.requestpojo.FileSaveMessage;
 import node.requestpojo.FileSearchMessage;
+import node.responsepojo.CalculationResultResponse;
 import node.responsepojo.FileSearchResponse;
 import rpc.client.RPCClient;
 import rpc.common.RequestId;
@@ -35,7 +36,7 @@ public class NodeClient {
                 rpc("download_res", Boolean.class).
                 rpc("link_res", Boolean.class).
                 rpc("quit_res", Boolean.class).
-                rpc("distributeCalculate_res", List.class);
+                rpc("distributeCalculate_res", CalculationResultResponse.class);
     }
 
     public List<String> searchNode(String messageId) {
@@ -89,8 +90,9 @@ public class NodeClient {
         return (Boolean) client.send("download", message);
     }
 
-    public ArrayList distributeCalculate(DistributeCalculateMessage message) {
-        return (ArrayList) client.send("distributeCalculate", message);
+    public CalculationResultResponse distributeCalculate(DistributeCalculateMessage message){
+        CalculationResultResponse response= client.send("distributeCalculate",message);
+        return response;
     }
 
     /**
