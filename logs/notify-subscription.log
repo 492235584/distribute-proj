@@ -3805,3 +3805,791 @@ Caused by: java.net.ConnectException: Connection refused
 2018-12-23 21:14:43,496 - quit complete
 2018-12-23 21:14:43,505 - Freed 3 thread-local buffer(s) from thread: nioEventLoopGroup-3-1
 2018-12-23 21:14:43,556 - connection leaves : 100.67.24.99
+2018-12-23 22:39:49,602 - local IP : 100.67.246.121
+2018-12-23 22:39:49,621 - Using SLF4J as the default logging framework
+2018-12-23 22:39:49,628 - -Dio.netty.eventLoopThreads: 16
+2018-12-23 22:39:49,648 - -Dio.netty.noKeySetOptimization: false
+2018-12-23 22:39:49,648 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-12-23 22:39:49,664 - Platform: MacOS
+2018-12-23 22:39:49,665 - -Dio.netty.noUnsafe: false
+2018-12-23 22:39:49,665 - Java version: 8
+2018-12-23 22:39:49,666 - sun.misc.Unsafe.theUnsafe: available
+2018-12-23 22:39:49,667 - sun.misc.Unsafe.copyMemory: available
+2018-12-23 22:39:49,667 - java.nio.Buffer.address: available
+2018-12-23 22:39:49,668 - direct buffer constructor: available
+2018-12-23 22:39:49,668 - java.nio.Bits.unaligned: available, true
+2018-12-23 22:39:49,668 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2018-12-23 22:39:49,668 - java.nio.DirectByteBuffer.<init>(long, int): available
+2018-12-23 22:39:49,669 - sun.misc.Unsafe: available
+2018-12-23 22:39:49,669 - -Dio.netty.tmpdir: /var/folders/9y/_b1p_yfs7cd3qts9g225jdqw0000gn/T (java.io.tmpdir)
+2018-12-23 22:39:49,669 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-12-23 22:39:49,670 - -Dio.netty.maxDirectMemory: 3817865216 bytes
+2018-12-23 22:39:49,670 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2018-12-23 22:39:49,671 - java.nio.ByteBuffer.cleaner(): available
+2018-12-23 22:39:49,671 - -Dio.netty.noPreferDirect: false
+2018-12-23 22:39:49,683 - org.jctools-core.MpscChunkedArrayQueue: available
+2018-12-23 22:39:49,699 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2018-12-23 22:39:49,699 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2018-12-23 22:39:49,891 - -Dio.netty.processId: 5389 (auto-detected)
+2018-12-23 22:39:49,894 - -Djava.net.preferIPv4Stack: false
+2018-12-23 22:39:49,897 - -Djava.net.preferIPv6Addresses: false
+2018-12-23 22:39:49,898 - Loopback interface: [lo0, lo0, 0:0:0:0:0:0:0:1] ({}, {})
+2018-12-23 22:39:49,899 - Failed to get SOMAXCONN from sysctl and file /proc/sys/net/core/somaxconn. Default: 128
+2018-12-23 22:39:49,903 - -Dio.netty.machineId: 18:65:90:ff:fe:ce:5d:59 (auto-detected)
+2018-12-23 22:39:49,915 - -Dio.netty.leakDetection.level: simple
+2018-12-23 22:39:49,915 - -Dio.netty.leakDetection.targetRecords: 4
+2018-12-23 22:39:49,942 - -Dio.netty.allocator.numHeapArenas: 16
+2018-12-23 22:39:49,942 - -Dio.netty.allocator.numDirectArenas: 16
+2018-12-23 22:39:49,942 - -Dio.netty.allocator.pageSize: 8192
+2018-12-23 22:39:49,942 - -Dio.netty.allocator.maxOrder: 11
+2018-12-23 22:39:49,942 - -Dio.netty.allocator.chunkSize: 16777216
+2018-12-23 22:39:49,942 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-12-23 22:39:49,943 - -Dio.netty.allocator.smallCacheSize: 256
+2018-12-23 22:39:49,943 - -Dio.netty.allocator.normalCacheSize: 64
+2018-12-23 22:39:49,943 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-12-23 22:39:49,943 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-12-23 22:39:49,943 - -Dio.netty.allocator.useCacheForAllThreads: true
+2018-12-23 22:39:49,951 - -Dio.netty.allocator.type: pooled
+2018-12-23 22:39:49,951 - -Dio.netty.threadLocalDirectBufferSize: 0
+2018-12-23 22:39:49,951 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-12-23 22:39:49,965 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0xb3fe04b2]'
+2018-12-23 22:39:49,978 - server started @ 100.67.246.121:45455
+
+2018-12-23 22:43:25,051 - local IP : 100.67.246.121
+2018-12-23 22:43:25,076 - Using SLF4J as the default logging framework
+2018-12-23 22:43:25,095 - -Dio.netty.eventLoopThreads: 16
+2018-12-23 22:43:25,120 - -Dio.netty.noKeySetOptimization: false
+2018-12-23 22:43:25,121 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-12-23 22:43:25,138 - Platform: MacOS
+2018-12-23 22:43:25,139 - -Dio.netty.noUnsafe: false
+2018-12-23 22:43:25,139 - Java version: 8
+2018-12-23 22:43:25,140 - sun.misc.Unsafe.theUnsafe: available
+2018-12-23 22:43:25,141 - sun.misc.Unsafe.copyMemory: available
+2018-12-23 22:43:25,141 - java.nio.Buffer.address: available
+2018-12-23 22:43:25,142 - direct buffer constructor: available
+2018-12-23 22:43:25,143 - java.nio.Bits.unaligned: available, true
+2018-12-23 22:43:25,143 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2018-12-23 22:43:25,143 - java.nio.DirectByteBuffer.<init>(long, int): available
+2018-12-23 22:43:25,143 - sun.misc.Unsafe: available
+2018-12-23 22:43:25,144 - -Dio.netty.tmpdir: /var/folders/9y/_b1p_yfs7cd3qts9g225jdqw0000gn/T (java.io.tmpdir)
+2018-12-23 22:43:25,144 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-12-23 22:43:25,146 - -Dio.netty.maxDirectMemory: 3817865216 bytes
+2018-12-23 22:43:25,146 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2018-12-23 22:43:25,147 - java.nio.ByteBuffer.cleaner(): available
+2018-12-23 22:43:25,147 - -Dio.netty.noPreferDirect: false
+2018-12-23 22:43:25,158 - org.jctools-core.MpscChunkedArrayQueue: available
+2018-12-23 22:43:25,188 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2018-12-23 22:43:25,188 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2018-12-23 22:43:25,473 - -Dio.netty.processId: 5407 (auto-detected)
+2018-12-23 22:43:25,476 - -Djava.net.preferIPv4Stack: false
+2018-12-23 22:43:25,488 - -Djava.net.preferIPv6Addresses: false
+2018-12-23 22:43:25,489 - Loopback interface: [lo0, lo0, 0:0:0:0:0:0:0:1] ({}, {})
+2018-12-23 22:43:25,490 - Failed to get SOMAXCONN from sysctl and file /proc/sys/net/core/somaxconn. Default: 128
+2018-12-23 22:43:25,508 - -Dio.netty.machineId: 18:65:90:ff:fe:ce:5d:59 (auto-detected)
+2018-12-23 22:43:25,529 - -Dio.netty.leakDetection.level: simple
+2018-12-23 22:43:25,537 - -Dio.netty.leakDetection.targetRecords: 4
+2018-12-23 22:43:25,571 - -Dio.netty.allocator.numHeapArenas: 16
+2018-12-23 22:43:25,571 - -Dio.netty.allocator.numDirectArenas: 16
+2018-12-23 22:43:25,571 - -Dio.netty.allocator.pageSize: 8192
+2018-12-23 22:43:25,572 - -Dio.netty.allocator.maxOrder: 11
+2018-12-23 22:43:25,572 - -Dio.netty.allocator.chunkSize: 16777216
+2018-12-23 22:43:25,572 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-12-23 22:43:25,572 - -Dio.netty.allocator.smallCacheSize: 256
+2018-12-23 22:43:25,572 - -Dio.netty.allocator.normalCacheSize: 64
+2018-12-23 22:43:25,572 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-12-23 22:43:25,572 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-12-23 22:43:25,572 - -Dio.netty.allocator.useCacheForAllThreads: true
+2018-12-23 22:43:25,582 - -Dio.netty.allocator.type: pooled
+2018-12-23 22:43:25,582 - -Dio.netty.threadLocalDirectBufferSize: 0
+2018-12-23 22:43:25,582 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-12-23 22:43:25,599 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x60d2f986]'
+2018-12-23 22:43:25,612 - server started @ 100.67.246.121:45455
+
+2018-12-23 22:43:40,113 - local IP : 100.67.246.121
+2018-12-23 22:43:40,133 - Using SLF4J as the default logging framework
+2018-12-23 22:43:40,140 - -Dio.netty.eventLoopThreads: 16
+2018-12-23 22:43:40,161 - -Dio.netty.noKeySetOptimization: false
+2018-12-23 22:43:40,161 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-12-23 22:43:40,177 - Platform: MacOS
+2018-12-23 22:43:40,178 - -Dio.netty.noUnsafe: false
+2018-12-23 22:43:40,179 - Java version: 8
+2018-12-23 22:43:40,179 - sun.misc.Unsafe.theUnsafe: available
+2018-12-23 22:43:40,180 - sun.misc.Unsafe.copyMemory: available
+2018-12-23 22:43:40,180 - java.nio.Buffer.address: available
+2018-12-23 22:43:40,181 - direct buffer constructor: available
+2018-12-23 22:43:40,181 - java.nio.Bits.unaligned: available, true
+2018-12-23 22:43:40,182 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2018-12-23 22:43:40,182 - java.nio.DirectByteBuffer.<init>(long, int): available
+2018-12-23 22:43:40,182 - sun.misc.Unsafe: available
+2018-12-23 22:43:40,182 - -Dio.netty.tmpdir: /var/folders/9y/_b1p_yfs7cd3qts9g225jdqw0000gn/T (java.io.tmpdir)
+2018-12-23 22:43:40,182 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-12-23 22:43:40,183 - -Dio.netty.maxDirectMemory: 3817865216 bytes
+2018-12-23 22:43:40,183 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2018-12-23 22:43:40,184 - java.nio.ByteBuffer.cleaner(): available
+2018-12-23 22:43:40,184 - -Dio.netty.noPreferDirect: false
+2018-12-23 22:43:40,192 - org.jctools-core.MpscChunkedArrayQueue: available
+2018-12-23 22:43:40,209 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2018-12-23 22:43:40,209 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2018-12-23 22:43:40,257 - -Dio.netty.processId: 5412 (auto-detected)
+2018-12-23 22:43:40,259 - -Djava.net.preferIPv4Stack: false
+2018-12-23 22:43:40,259 - -Djava.net.preferIPv6Addresses: false
+2018-12-23 22:43:40,260 - Loopback interface: [lo0, lo0, 0:0:0:0:0:0:0:1] ({}, {})
+2018-12-23 22:43:40,261 - Failed to get SOMAXCONN from sysctl and file /proc/sys/net/core/somaxconn. Default: 128
+2018-12-23 22:43:40,264 - -Dio.netty.machineId: 18:65:90:ff:fe:ce:5d:59 (auto-detected)
+2018-12-23 22:43:40,275 - -Dio.netty.leakDetection.level: simple
+2018-12-23 22:43:40,275 - -Dio.netty.leakDetection.targetRecords: 4
+2018-12-23 22:43:40,305 - -Dio.netty.allocator.numHeapArenas: 16
+2018-12-23 22:43:40,305 - -Dio.netty.allocator.numDirectArenas: 16
+2018-12-23 22:43:40,305 - -Dio.netty.allocator.pageSize: 8192
+2018-12-23 22:43:40,305 - -Dio.netty.allocator.maxOrder: 11
+2018-12-23 22:43:40,305 - -Dio.netty.allocator.chunkSize: 16777216
+2018-12-23 22:43:40,305 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-12-23 22:43:40,305 - -Dio.netty.allocator.smallCacheSize: 256
+2018-12-23 22:43:40,305 - -Dio.netty.allocator.normalCacheSize: 64
+2018-12-23 22:43:40,306 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-12-23 22:43:40,306 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-12-23 22:43:40,306 - -Dio.netty.allocator.useCacheForAllThreads: true
+2018-12-23 22:43:40,314 - -Dio.netty.allocator.type: pooled
+2018-12-23 22:43:40,315 - -Dio.netty.threadLocalDirectBufferSize: 0
+2018-12-23 22:43:40,315 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-12-23 22:43:40,329 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0xc12fe7f3]'
+2018-12-23 22:43:40,345 - server started @ 100.67.246.121:45455
+
+2018-12-23 22:44:20,863 - local IP : 100.67.246.121
+2018-12-23 22:44:20,882 - Using SLF4J as the default logging framework
+2018-12-23 22:44:20,889 - -Dio.netty.eventLoopThreads: 16
+2018-12-23 22:44:20,909 - -Dio.netty.noKeySetOptimization: false
+2018-12-23 22:44:20,909 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-12-23 22:44:20,924 - Platform: MacOS
+2018-12-23 22:44:20,926 - -Dio.netty.noUnsafe: false
+2018-12-23 22:44:20,926 - Java version: 8
+2018-12-23 22:44:20,927 - sun.misc.Unsafe.theUnsafe: available
+2018-12-23 22:44:20,927 - sun.misc.Unsafe.copyMemory: available
+2018-12-23 22:44:20,928 - java.nio.Buffer.address: available
+2018-12-23 22:44:20,928 - direct buffer constructor: available
+2018-12-23 22:44:20,929 - java.nio.Bits.unaligned: available, true
+2018-12-23 22:44:20,929 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2018-12-23 22:44:20,929 - java.nio.DirectByteBuffer.<init>(long, int): available
+2018-12-23 22:44:20,929 - sun.misc.Unsafe: available
+2018-12-23 22:44:20,929 - -Dio.netty.tmpdir: /var/folders/9y/_b1p_yfs7cd3qts9g225jdqw0000gn/T (java.io.tmpdir)
+2018-12-23 22:44:20,930 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-12-23 22:44:20,931 - -Dio.netty.maxDirectMemory: 3817865216 bytes
+2018-12-23 22:44:20,931 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2018-12-23 22:44:20,932 - java.nio.ByteBuffer.cleaner(): available
+2018-12-23 22:44:20,932 - -Dio.netty.noPreferDirect: false
+2018-12-23 22:44:20,940 - org.jctools-core.MpscChunkedArrayQueue: available
+2018-12-23 22:44:20,957 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2018-12-23 22:44:20,957 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2018-12-23 22:44:21,007 - -Dio.netty.processId: 5420 (auto-detected)
+2018-12-23 22:44:21,009 - -Djava.net.preferIPv4Stack: false
+2018-12-23 22:44:21,011 - -Djava.net.preferIPv6Addresses: false
+2018-12-23 22:44:21,012 - Loopback interface: [lo0, lo0, 0:0:0:0:0:0:0:1] ({}, {})
+2018-12-23 22:44:21,013 - Failed to get SOMAXCONN from sysctl and file /proc/sys/net/core/somaxconn. Default: 128
+2018-12-23 22:44:21,017 - -Dio.netty.machineId: 18:65:90:ff:fe:ce:5d:59 (auto-detected)
+2018-12-23 22:44:21,028 - -Dio.netty.leakDetection.level: simple
+2018-12-23 22:44:21,028 - -Dio.netty.leakDetection.targetRecords: 4
+2018-12-23 22:44:21,058 - -Dio.netty.allocator.numHeapArenas: 16
+2018-12-23 22:44:21,058 - -Dio.netty.allocator.numDirectArenas: 16
+2018-12-23 22:44:21,058 - -Dio.netty.allocator.pageSize: 8192
+2018-12-23 22:44:21,058 - -Dio.netty.allocator.maxOrder: 11
+2018-12-23 22:44:21,058 - -Dio.netty.allocator.chunkSize: 16777216
+2018-12-23 22:44:21,059 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-12-23 22:44:21,059 - -Dio.netty.allocator.smallCacheSize: 256
+2018-12-23 22:44:21,059 - -Dio.netty.allocator.normalCacheSize: 64
+2018-12-23 22:44:21,059 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-12-23 22:44:21,059 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-12-23 22:44:21,059 - -Dio.netty.allocator.useCacheForAllThreads: true
+2018-12-23 22:44:21,067 - -Dio.netty.allocator.type: pooled
+2018-12-23 22:44:21,067 - -Dio.netty.threadLocalDirectBufferSize: 0
+2018-12-23 22:44:21,067 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-12-23 22:44:21,083 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0xbed3b344]'
+2018-12-23 22:44:21,100 - server started @ 100.67.246.121:45455
+
+2018-12-23 22:44:38,172 - local IP : 100.67.246.121
+2018-12-23 22:44:38,196 - Using SLF4J as the default logging framework
+2018-12-23 22:44:38,203 - -Dio.netty.eventLoopThreads: 16
+2018-12-23 22:44:38,225 - -Dio.netty.noKeySetOptimization: false
+2018-12-23 22:44:38,225 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-12-23 22:44:38,242 - Platform: MacOS
+2018-12-23 22:44:38,243 - -Dio.netty.noUnsafe: false
+2018-12-23 22:44:38,244 - Java version: 8
+2018-12-23 22:44:38,244 - sun.misc.Unsafe.theUnsafe: available
+2018-12-23 22:44:38,245 - sun.misc.Unsafe.copyMemory: available
+2018-12-23 22:44:38,245 - java.nio.Buffer.address: available
+2018-12-23 22:44:38,246 - direct buffer constructor: available
+2018-12-23 22:44:38,246 - java.nio.Bits.unaligned: available, true
+2018-12-23 22:44:38,247 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2018-12-23 22:44:38,247 - java.nio.DirectByteBuffer.<init>(long, int): available
+2018-12-23 22:44:38,247 - sun.misc.Unsafe: available
+2018-12-23 22:44:38,247 - -Dio.netty.tmpdir: /var/folders/9y/_b1p_yfs7cd3qts9g225jdqw0000gn/T (java.io.tmpdir)
+2018-12-23 22:44:38,247 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-12-23 22:44:38,248 - -Dio.netty.maxDirectMemory: 3817865216 bytes
+2018-12-23 22:44:38,248 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2018-12-23 22:44:38,250 - java.nio.ByteBuffer.cleaner(): available
+2018-12-23 22:44:38,250 - -Dio.netty.noPreferDirect: false
+2018-12-23 22:44:38,258 - org.jctools-core.MpscChunkedArrayQueue: available
+2018-12-23 22:44:38,277 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2018-12-23 22:44:38,277 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2018-12-23 22:44:38,329 - -Dio.netty.processId: 5426 (auto-detected)
+2018-12-23 22:44:38,331 - -Djava.net.preferIPv4Stack: false
+2018-12-23 22:44:38,332 - -Djava.net.preferIPv6Addresses: false
+2018-12-23 22:44:38,334 - Loopback interface: [lo0, lo0, 0:0:0:0:0:0:0:1] ({}, {})
+2018-12-23 22:44:38,335 - Failed to get SOMAXCONN from sysctl and file /proc/sys/net/core/somaxconn. Default: 128
+2018-12-23 22:44:38,339 - -Dio.netty.machineId: 18:65:90:ff:fe:ce:5d:59 (auto-detected)
+2018-12-23 22:44:38,351 - -Dio.netty.leakDetection.level: simple
+2018-12-23 22:44:38,351 - -Dio.netty.leakDetection.targetRecords: 4
+2018-12-23 22:44:38,384 - -Dio.netty.allocator.numHeapArenas: 16
+2018-12-23 22:44:38,384 - -Dio.netty.allocator.numDirectArenas: 16
+2018-12-23 22:44:38,385 - -Dio.netty.allocator.pageSize: 8192
+2018-12-23 22:44:38,385 - -Dio.netty.allocator.maxOrder: 11
+2018-12-23 22:44:38,385 - -Dio.netty.allocator.chunkSize: 16777216
+2018-12-23 22:44:38,385 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-12-23 22:44:38,385 - -Dio.netty.allocator.smallCacheSize: 256
+2018-12-23 22:44:38,385 - -Dio.netty.allocator.normalCacheSize: 64
+2018-12-23 22:44:38,386 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-12-23 22:44:38,386 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-12-23 22:44:38,386 - -Dio.netty.allocator.useCacheForAllThreads: true
+2018-12-23 22:44:38,396 - -Dio.netty.allocator.type: pooled
+2018-12-23 22:44:38,396 - -Dio.netty.threadLocalDirectBufferSize: 0
+2018-12-23 22:44:38,396 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-12-23 22:44:38,413 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x754e6415]'
+2018-12-23 22:44:38,433 - server started @ 100.67.246.121:45455
+
+2018-12-23 22:45:40,760 - local IP : 100.67.246.121
+2018-12-23 22:45:40,779 - Using SLF4J as the default logging framework
+2018-12-23 22:45:40,786 - -Dio.netty.eventLoopThreads: 16
+2018-12-23 22:45:40,807 - -Dio.netty.noKeySetOptimization: false
+2018-12-23 22:45:40,807 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-12-23 22:45:40,822 - Platform: MacOS
+2018-12-23 22:45:40,823 - -Dio.netty.noUnsafe: false
+2018-12-23 22:45:40,823 - Java version: 8
+2018-12-23 22:45:40,824 - sun.misc.Unsafe.theUnsafe: available
+2018-12-23 22:45:40,825 - sun.misc.Unsafe.copyMemory: available
+2018-12-23 22:45:40,825 - java.nio.Buffer.address: available
+2018-12-23 22:45:40,826 - direct buffer constructor: available
+2018-12-23 22:45:40,826 - java.nio.Bits.unaligned: available, true
+2018-12-23 22:45:40,826 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2018-12-23 22:45:40,826 - java.nio.DirectByteBuffer.<init>(long, int): available
+2018-12-23 22:45:40,826 - sun.misc.Unsafe: available
+2018-12-23 22:45:40,827 - -Dio.netty.tmpdir: /var/folders/9y/_b1p_yfs7cd3qts9g225jdqw0000gn/T (java.io.tmpdir)
+2018-12-23 22:45:40,827 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-12-23 22:45:40,828 - -Dio.netty.maxDirectMemory: 3817865216 bytes
+2018-12-23 22:45:40,828 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2018-12-23 22:45:40,829 - java.nio.ByteBuffer.cleaner(): available
+2018-12-23 22:45:40,829 - -Dio.netty.noPreferDirect: false
+2018-12-23 22:45:40,837 - org.jctools-core.MpscChunkedArrayQueue: available
+2018-12-23 22:45:40,854 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2018-12-23 22:45:40,854 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2018-12-23 22:45:41,034 - -Dio.netty.processId: 5434 (auto-detected)
+2018-12-23 22:45:41,037 - -Djava.net.preferIPv4Stack: false
+2018-12-23 22:45:41,037 - -Djava.net.preferIPv6Addresses: false
+2018-12-23 22:45:41,040 - Loopback interface: [lo0, lo0, 0:0:0:0:0:0:0:1] ({}, {})
+2018-12-23 22:45:41,041 - Failed to get SOMAXCONN from sysctl and file /proc/sys/net/core/somaxconn. Default: 128
+2018-12-23 22:45:41,044 - -Dio.netty.machineId: 18:65:90:ff:fe:ce:5d:59 (auto-detected)
+2018-12-23 22:45:41,057 - -Dio.netty.leakDetection.level: simple
+2018-12-23 22:45:41,057 - -Dio.netty.leakDetection.targetRecords: 4
+2018-12-23 22:45:41,089 - -Dio.netty.allocator.numHeapArenas: 16
+2018-12-23 22:45:41,089 - -Dio.netty.allocator.numDirectArenas: 16
+2018-12-23 22:45:41,089 - -Dio.netty.allocator.pageSize: 8192
+2018-12-23 22:45:41,089 - -Dio.netty.allocator.maxOrder: 11
+2018-12-23 22:45:41,089 - -Dio.netty.allocator.chunkSize: 16777216
+2018-12-23 22:45:41,089 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-12-23 22:45:41,089 - -Dio.netty.allocator.smallCacheSize: 256
+2018-12-23 22:45:41,090 - -Dio.netty.allocator.normalCacheSize: 64
+2018-12-23 22:45:41,090 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-12-23 22:45:41,090 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-12-23 22:45:41,090 - -Dio.netty.allocator.useCacheForAllThreads: true
+2018-12-23 22:45:41,097 - -Dio.netty.allocator.type: pooled
+2018-12-23 22:45:41,097 - -Dio.netty.threadLocalDirectBufferSize: 0
+2018-12-23 22:45:41,097 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-12-23 22:45:41,111 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x3a88d5e4]'
+2018-12-23 22:45:41,124 - server started @ 100.67.246.121:45455
+
+2018-12-23 22:46:05,013 - local IP : 100.67.246.121
+2018-12-23 22:46:05,033 - Using SLF4J as the default logging framework
+2018-12-23 22:46:05,040 - -Dio.netty.eventLoopThreads: 16
+2018-12-23 22:46:05,063 - -Dio.netty.noKeySetOptimization: false
+2018-12-23 22:46:05,063 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-12-23 22:46:05,080 - Platform: MacOS
+2018-12-23 22:46:05,082 - -Dio.netty.noUnsafe: false
+2018-12-23 22:46:05,082 - Java version: 8
+2018-12-23 22:46:05,083 - sun.misc.Unsafe.theUnsafe: available
+2018-12-23 22:46:05,084 - sun.misc.Unsafe.copyMemory: available
+2018-12-23 22:46:05,084 - java.nio.Buffer.address: available
+2018-12-23 22:46:05,085 - direct buffer constructor: available
+2018-12-23 22:46:05,086 - java.nio.Bits.unaligned: available, true
+2018-12-23 22:46:05,087 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2018-12-23 22:46:05,087 - java.nio.DirectByteBuffer.<init>(long, int): available
+2018-12-23 22:46:05,087 - sun.misc.Unsafe: available
+2018-12-23 22:46:05,088 - -Dio.netty.tmpdir: /var/folders/9y/_b1p_yfs7cd3qts9g225jdqw0000gn/T (java.io.tmpdir)
+2018-12-23 22:46:05,088 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-12-23 22:46:05,089 - -Dio.netty.maxDirectMemory: 3817865216 bytes
+2018-12-23 22:46:05,090 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2018-12-23 22:46:05,091 - java.nio.ByteBuffer.cleaner(): available
+2018-12-23 22:46:05,091 - -Dio.netty.noPreferDirect: false
+2018-12-23 22:46:05,099 - org.jctools-core.MpscChunkedArrayQueue: available
+2018-12-23 22:46:05,120 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2018-12-23 22:46:05,121 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2018-12-23 22:46:05,169 - -Dio.netty.processId: 5441 (auto-detected)
+2018-12-23 22:46:05,171 - -Djava.net.preferIPv4Stack: false
+2018-12-23 22:46:05,171 - -Djava.net.preferIPv6Addresses: false
+2018-12-23 22:46:05,172 - Loopback interface: [lo0, lo0, 0:0:0:0:0:0:0:1] ({}, {})
+2018-12-23 22:46:05,172 - Failed to get SOMAXCONN from sysctl and file /proc/sys/net/core/somaxconn. Default: 128
+2018-12-23 22:46:05,178 - -Dio.netty.machineId: 18:65:90:ff:fe:ce:5d:59 (auto-detected)
+2018-12-23 22:46:05,189 - -Dio.netty.leakDetection.level: simple
+2018-12-23 22:46:05,190 - -Dio.netty.leakDetection.targetRecords: 4
+2018-12-23 22:46:05,220 - -Dio.netty.allocator.numHeapArenas: 16
+2018-12-23 22:46:05,220 - -Dio.netty.allocator.numDirectArenas: 16
+2018-12-23 22:46:05,220 - -Dio.netty.allocator.pageSize: 8192
+2018-12-23 22:46:05,221 - -Dio.netty.allocator.maxOrder: 11
+2018-12-23 22:46:05,221 - -Dio.netty.allocator.chunkSize: 16777216
+2018-12-23 22:46:05,221 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-12-23 22:46:05,221 - -Dio.netty.allocator.smallCacheSize: 256
+2018-12-23 22:46:05,221 - -Dio.netty.allocator.normalCacheSize: 64
+2018-12-23 22:46:05,221 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-12-23 22:46:05,221 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-12-23 22:46:05,222 - -Dio.netty.allocator.useCacheForAllThreads: true
+2018-12-23 22:46:05,232 - -Dio.netty.allocator.type: pooled
+2018-12-23 22:46:05,232 - -Dio.netty.threadLocalDirectBufferSize: 0
+2018-12-23 22:46:05,232 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-12-23 22:46:05,249 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0xc4a42c2f]'
+2018-12-23 22:46:05,267 - server started @ 100.67.246.121:45455
+
+2018-12-23 22:53:28,616 - local IP : 100.67.246.121
+2018-12-23 22:53:28,635 - Using SLF4J as the default logging framework
+2018-12-23 22:53:28,641 - -Dio.netty.eventLoopThreads: 16
+2018-12-23 22:53:28,663 - -Dio.netty.noKeySetOptimization: false
+2018-12-23 22:53:28,663 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-12-23 22:53:28,682 - Platform: MacOS
+2018-12-23 22:53:28,683 - -Dio.netty.noUnsafe: false
+2018-12-23 22:53:28,683 - Java version: 8
+2018-12-23 22:53:28,684 - sun.misc.Unsafe.theUnsafe: available
+2018-12-23 22:53:28,685 - sun.misc.Unsafe.copyMemory: available
+2018-12-23 22:53:28,685 - java.nio.Buffer.address: available
+2018-12-23 22:53:28,686 - direct buffer constructor: available
+2018-12-23 22:53:28,686 - java.nio.Bits.unaligned: available, true
+2018-12-23 22:53:28,686 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2018-12-23 22:53:28,687 - java.nio.DirectByteBuffer.<init>(long, int): available
+2018-12-23 22:53:28,687 - sun.misc.Unsafe: available
+2018-12-23 22:53:28,687 - -Dio.netty.tmpdir: /var/folders/9y/_b1p_yfs7cd3qts9g225jdqw0000gn/T (java.io.tmpdir)
+2018-12-23 22:53:28,687 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-12-23 22:53:28,688 - -Dio.netty.maxDirectMemory: 3817865216 bytes
+2018-12-23 22:53:28,688 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2018-12-23 22:53:28,689 - java.nio.ByteBuffer.cleaner(): available
+2018-12-23 22:53:28,690 - -Dio.netty.noPreferDirect: false
+2018-12-23 22:53:28,698 - org.jctools-core.MpscChunkedArrayQueue: available
+2018-12-23 22:53:28,715 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2018-12-23 22:53:28,716 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2018-12-23 22:53:28,911 - -Dio.netty.processId: 5469 (auto-detected)
+2018-12-23 22:53:28,914 - -Djava.net.preferIPv4Stack: false
+2018-12-23 22:53:28,914 - -Djava.net.preferIPv6Addresses: false
+2018-12-23 22:53:28,917 - Loopback interface: [lo0, lo0, 0:0:0:0:0:0:0:1] ({}, {})
+2018-12-23 22:53:28,918 - Failed to get SOMAXCONN from sysctl and file /proc/sys/net/core/somaxconn. Default: 128
+2018-12-23 22:53:28,921 - -Dio.netty.machineId: 18:65:90:ff:fe:ce:5d:59 (auto-detected)
+2018-12-23 22:53:28,934 - -Dio.netty.leakDetection.level: simple
+2018-12-23 22:53:28,934 - -Dio.netty.leakDetection.targetRecords: 4
+2018-12-23 22:53:28,965 - -Dio.netty.allocator.numHeapArenas: 16
+2018-12-23 22:53:28,966 - -Dio.netty.allocator.numDirectArenas: 16
+2018-12-23 22:53:28,966 - -Dio.netty.allocator.pageSize: 8192
+2018-12-23 22:53:28,966 - -Dio.netty.allocator.maxOrder: 11
+2018-12-23 22:53:28,966 - -Dio.netty.allocator.chunkSize: 16777216
+2018-12-23 22:53:28,966 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-12-23 22:53:28,966 - -Dio.netty.allocator.smallCacheSize: 256
+2018-12-23 22:53:28,966 - -Dio.netty.allocator.normalCacheSize: 64
+2018-12-23 22:53:28,966 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-12-23 22:53:28,966 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-12-23 22:53:28,967 - -Dio.netty.allocator.useCacheForAllThreads: true
+2018-12-23 22:53:28,975 - -Dio.netty.allocator.type: pooled
+2018-12-23 22:53:28,975 - -Dio.netty.threadLocalDirectBufferSize: 0
+2018-12-23 22:53:28,976 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-12-23 22:53:28,989 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x6b446074]'
+2018-12-23 22:53:29,002 - server started @ 100.67.246.121:45455
+
+2018-12-23 22:57:27,346 - local IP : 100.67.246.121
+2018-12-23 22:57:27,364 - Using SLF4J as the default logging framework
+2018-12-23 22:57:27,371 - -Dio.netty.eventLoopThreads: 16
+2018-12-23 22:57:27,396 - -Dio.netty.noKeySetOptimization: false
+2018-12-23 22:57:27,396 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-12-23 22:57:27,411 - Platform: MacOS
+2018-12-23 22:57:27,413 - -Dio.netty.noUnsafe: false
+2018-12-23 22:57:27,413 - Java version: 8
+2018-12-23 22:57:27,414 - sun.misc.Unsafe.theUnsafe: available
+2018-12-23 22:57:27,414 - sun.misc.Unsafe.copyMemory: available
+2018-12-23 22:57:27,415 - java.nio.Buffer.address: available
+2018-12-23 22:57:27,417 - direct buffer constructor: available
+2018-12-23 22:57:27,417 - java.nio.Bits.unaligned: available, true
+2018-12-23 22:57:27,417 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2018-12-23 22:57:27,418 - java.nio.DirectByteBuffer.<init>(long, int): available
+2018-12-23 22:57:27,418 - sun.misc.Unsafe: available
+2018-12-23 22:57:27,418 - -Dio.netty.tmpdir: /var/folders/9y/_b1p_yfs7cd3qts9g225jdqw0000gn/T (java.io.tmpdir)
+2018-12-23 22:57:27,418 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-12-23 22:57:27,419 - -Dio.netty.maxDirectMemory: 3817865216 bytes
+2018-12-23 22:57:27,419 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2018-12-23 22:57:27,420 - java.nio.ByteBuffer.cleaner(): available
+2018-12-23 22:57:27,420 - -Dio.netty.noPreferDirect: false
+2018-12-23 22:57:27,432 - org.jctools-core.MpscChunkedArrayQueue: available
+2018-12-23 22:57:27,448 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2018-12-23 22:57:27,449 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2018-12-23 22:57:27,668 - -Dio.netty.processId: 5495 (auto-detected)
+2018-12-23 22:57:27,671 - -Djava.net.preferIPv4Stack: false
+2018-12-23 22:57:27,672 - -Djava.net.preferIPv6Addresses: false
+2018-12-23 22:57:27,673 - Loopback interface: [lo0, lo0, 0:0:0:0:0:0:0:1] ({}, {})
+2018-12-23 22:57:27,673 - Failed to get SOMAXCONN from sysctl and file /proc/sys/net/core/somaxconn. Default: 128
+2018-12-23 22:57:27,678 - -Dio.netty.machineId: 18:65:90:ff:fe:ce:5d:59 (auto-detected)
+2018-12-23 22:57:27,690 - -Dio.netty.leakDetection.level: simple
+2018-12-23 22:57:27,690 - -Dio.netty.leakDetection.targetRecords: 4
+2018-12-23 22:57:27,715 - -Dio.netty.allocator.numHeapArenas: 16
+2018-12-23 22:57:27,715 - -Dio.netty.allocator.numDirectArenas: 16
+2018-12-23 22:57:27,715 - -Dio.netty.allocator.pageSize: 8192
+2018-12-23 22:57:27,715 - -Dio.netty.allocator.maxOrder: 11
+2018-12-23 22:57:27,715 - -Dio.netty.allocator.chunkSize: 16777216
+2018-12-23 22:57:27,716 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-12-23 22:57:27,716 - -Dio.netty.allocator.smallCacheSize: 256
+2018-12-23 22:57:27,716 - -Dio.netty.allocator.normalCacheSize: 64
+2018-12-23 22:57:27,716 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-12-23 22:57:27,716 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-12-23 22:57:27,716 - -Dio.netty.allocator.useCacheForAllThreads: true
+2018-12-23 22:57:27,724 - -Dio.netty.allocator.type: pooled
+2018-12-23 22:57:27,724 - -Dio.netty.threadLocalDirectBufferSize: 0
+2018-12-23 22:57:27,724 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-12-23 22:57:27,738 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x05b51041]'
+2018-12-23 22:57:27,751 - server started @ 100.67.246.121:45455
+
+2018-12-23 22:58:04,162 - local IP : 100.67.246.121
+2018-12-23 22:58:04,181 - Using SLF4J as the default logging framework
+2018-12-23 22:58:04,187 - -Dio.netty.eventLoopThreads: 16
+2018-12-23 22:58:04,208 - -Dio.netty.noKeySetOptimization: false
+2018-12-23 22:58:04,208 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-12-23 22:58:04,224 - Platform: MacOS
+2018-12-23 22:58:04,225 - -Dio.netty.noUnsafe: false
+2018-12-23 22:58:04,225 - Java version: 8
+2018-12-23 22:58:04,226 - sun.misc.Unsafe.theUnsafe: available
+2018-12-23 22:58:04,228 - sun.misc.Unsafe.copyMemory: available
+2018-12-23 22:58:04,229 - java.nio.Buffer.address: available
+2018-12-23 22:58:04,229 - direct buffer constructor: available
+2018-12-23 22:58:04,230 - java.nio.Bits.unaligned: available, true
+2018-12-23 22:58:04,230 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2018-12-23 22:58:04,230 - java.nio.DirectByteBuffer.<init>(long, int): available
+2018-12-23 22:58:04,230 - sun.misc.Unsafe: available
+2018-12-23 22:58:04,230 - -Dio.netty.tmpdir: /var/folders/9y/_b1p_yfs7cd3qts9g225jdqw0000gn/T (java.io.tmpdir)
+2018-12-23 22:58:04,231 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-12-23 22:58:04,232 - -Dio.netty.maxDirectMemory: 3817865216 bytes
+2018-12-23 22:58:04,232 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2018-12-23 22:58:04,233 - java.nio.ByteBuffer.cleaner(): available
+2018-12-23 22:58:04,233 - -Dio.netty.noPreferDirect: false
+2018-12-23 22:58:04,245 - org.jctools-core.MpscChunkedArrayQueue: available
+2018-12-23 22:58:04,262 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2018-12-23 22:58:04,263 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2018-12-23 22:58:04,310 - -Dio.netty.processId: 5502 (auto-detected)
+2018-12-23 22:58:04,312 - -Djava.net.preferIPv4Stack: false
+2018-12-23 22:58:04,312 - -Djava.net.preferIPv6Addresses: false
+2018-12-23 22:58:04,313 - Loopback interface: [lo0, lo0, 0:0:0:0:0:0:0:1] ({}, {})
+2018-12-23 22:58:04,313 - Failed to get SOMAXCONN from sysctl and file /proc/sys/net/core/somaxconn. Default: 128
+2018-12-23 22:58:04,317 - -Dio.netty.machineId: 18:65:90:ff:fe:ce:5d:59 (auto-detected)
+2018-12-23 22:58:04,327 - -Dio.netty.leakDetection.level: simple
+2018-12-23 22:58:04,328 - -Dio.netty.leakDetection.targetRecords: 4
+2018-12-23 22:58:04,351 - -Dio.netty.allocator.numHeapArenas: 16
+2018-12-23 22:58:04,352 - -Dio.netty.allocator.numDirectArenas: 16
+2018-12-23 22:58:04,352 - -Dio.netty.allocator.pageSize: 8192
+2018-12-23 22:58:04,352 - -Dio.netty.allocator.maxOrder: 11
+2018-12-23 22:58:04,352 - -Dio.netty.allocator.chunkSize: 16777216
+2018-12-23 22:58:04,352 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-12-23 22:58:04,352 - -Dio.netty.allocator.smallCacheSize: 256
+2018-12-23 22:58:04,352 - -Dio.netty.allocator.normalCacheSize: 64
+2018-12-23 22:58:04,352 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-12-23 22:58:04,352 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-12-23 22:58:04,353 - -Dio.netty.allocator.useCacheForAllThreads: true
+2018-12-23 22:58:04,360 - -Dio.netty.allocator.type: pooled
+2018-12-23 22:58:04,360 - -Dio.netty.threadLocalDirectBufferSize: 0
+2018-12-23 22:58:04,360 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-12-23 22:58:04,374 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0xdb45f2ad]'
+2018-12-23 22:58:04,389 - server started @ 100.67.246.121:45455
+
+2018-12-23 22:58:23,222 - local IP : 100.67.246.121
+2018-12-23 22:58:23,241 - Using SLF4J as the default logging framework
+2018-12-23 22:58:23,248 - -Dio.netty.eventLoopThreads: 16
+2018-12-23 22:58:23,269 - -Dio.netty.noKeySetOptimization: false
+2018-12-23 22:58:23,269 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-12-23 22:58:23,284 - Platform: MacOS
+2018-12-23 22:58:23,285 - -Dio.netty.noUnsafe: false
+2018-12-23 22:58:23,285 - Java version: 8
+2018-12-23 22:58:23,286 - sun.misc.Unsafe.theUnsafe: available
+2018-12-23 22:58:23,288 - sun.misc.Unsafe.copyMemory: available
+2018-12-23 22:58:23,289 - java.nio.Buffer.address: available
+2018-12-23 22:58:23,289 - direct buffer constructor: available
+2018-12-23 22:58:23,290 - java.nio.Bits.unaligned: available, true
+2018-12-23 22:58:23,290 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2018-12-23 22:58:23,290 - java.nio.DirectByteBuffer.<init>(long, int): available
+2018-12-23 22:58:23,290 - sun.misc.Unsafe: available
+2018-12-23 22:58:23,290 - -Dio.netty.tmpdir: /var/folders/9y/_b1p_yfs7cd3qts9g225jdqw0000gn/T (java.io.tmpdir)
+2018-12-23 22:58:23,290 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-12-23 22:58:23,292 - -Dio.netty.maxDirectMemory: 3817865216 bytes
+2018-12-23 22:58:23,292 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2018-12-23 22:58:23,292 - java.nio.ByteBuffer.cleaner(): available
+2018-12-23 22:58:23,293 - -Dio.netty.noPreferDirect: false
+2018-12-23 22:58:23,304 - org.jctools-core.MpscChunkedArrayQueue: available
+2018-12-23 22:58:23,321 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2018-12-23 22:58:23,321 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2018-12-23 22:58:23,369 - -Dio.netty.processId: 5508 (auto-detected)
+2018-12-23 22:58:23,373 - -Djava.net.preferIPv4Stack: false
+2018-12-23 22:58:23,373 - -Djava.net.preferIPv6Addresses: false
+2018-12-23 22:58:23,374 - Loopback interface: [lo0, lo0, 0:0:0:0:0:0:0:1] ({}, {})
+2018-12-23 22:58:23,375 - Failed to get SOMAXCONN from sysctl and file /proc/sys/net/core/somaxconn. Default: 128
+2018-12-23 22:58:23,378 - -Dio.netty.machineId: 18:65:90:ff:fe:ce:5d:59 (auto-detected)
+2018-12-23 22:58:23,389 - -Dio.netty.leakDetection.level: simple
+2018-12-23 22:58:23,389 - -Dio.netty.leakDetection.targetRecords: 4
+2018-12-23 22:58:23,414 - -Dio.netty.allocator.numHeapArenas: 16
+2018-12-23 22:58:23,414 - -Dio.netty.allocator.numDirectArenas: 16
+2018-12-23 22:58:23,414 - -Dio.netty.allocator.pageSize: 8192
+2018-12-23 22:58:23,414 - -Dio.netty.allocator.maxOrder: 11
+2018-12-23 22:58:23,414 - -Dio.netty.allocator.chunkSize: 16777216
+2018-12-23 22:58:23,414 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-12-23 22:58:23,414 - -Dio.netty.allocator.smallCacheSize: 256
+2018-12-23 22:58:23,414 - -Dio.netty.allocator.normalCacheSize: 64
+2018-12-23 22:58:23,415 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-12-23 22:58:23,415 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-12-23 22:58:23,415 - -Dio.netty.allocator.useCacheForAllThreads: true
+2018-12-23 22:58:23,423 - -Dio.netty.allocator.type: pooled
+2018-12-23 22:58:23,423 - -Dio.netty.threadLocalDirectBufferSize: 0
+2018-12-23 22:58:23,423 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-12-23 22:58:23,439 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x355591c2]'
+2018-12-23 22:58:23,460 - server started @ 100.67.246.121:45455
+
+2018-12-23 22:59:54,676 - local IP : 100.67.246.121
+2018-12-23 22:59:54,695 - Using SLF4J as the default logging framework
+2018-12-23 22:59:54,702 - -Dio.netty.eventLoopThreads: 16
+2018-12-23 22:59:54,722 - -Dio.netty.noKeySetOptimization: false
+2018-12-23 22:59:54,723 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-12-23 22:59:54,738 - Platform: MacOS
+2018-12-23 22:59:54,739 - -Dio.netty.noUnsafe: false
+2018-12-23 22:59:54,739 - Java version: 8
+2018-12-23 22:59:54,740 - sun.misc.Unsafe.theUnsafe: available
+2018-12-23 22:59:54,742 - sun.misc.Unsafe.copyMemory: available
+2018-12-23 22:59:54,743 - java.nio.Buffer.address: available
+2018-12-23 22:59:54,743 - direct buffer constructor: available
+2018-12-23 22:59:54,744 - java.nio.Bits.unaligned: available, true
+2018-12-23 22:59:54,744 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2018-12-23 22:59:54,744 - java.nio.DirectByteBuffer.<init>(long, int): available
+2018-12-23 22:59:54,744 - sun.misc.Unsafe: available
+2018-12-23 22:59:54,744 - -Dio.netty.tmpdir: /var/folders/9y/_b1p_yfs7cd3qts9g225jdqw0000gn/T (java.io.tmpdir)
+2018-12-23 22:59:54,744 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-12-23 22:59:54,745 - -Dio.netty.maxDirectMemory: 3817865216 bytes
+2018-12-23 22:59:54,746 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2018-12-23 22:59:54,747 - java.nio.ByteBuffer.cleaner(): available
+2018-12-23 22:59:54,747 - -Dio.netty.noPreferDirect: false
+2018-12-23 22:59:54,758 - org.jctools-core.MpscChunkedArrayQueue: available
+2018-12-23 22:59:54,775 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2018-12-23 22:59:54,775 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2018-12-23 22:59:55,013 - -Dio.netty.processId: 5521 (auto-detected)
+2018-12-23 22:59:55,016 - -Djava.net.preferIPv4Stack: false
+2018-12-23 22:59:55,019 - -Djava.net.preferIPv6Addresses: false
+2018-12-23 22:59:55,020 - Loopback interface: [lo0, lo0, 0:0:0:0:0:0:0:1] ({}, {})
+2018-12-23 22:59:55,021 - Failed to get SOMAXCONN from sysctl and file /proc/sys/net/core/somaxconn. Default: 128
+2018-12-23 22:59:55,024 - -Dio.netty.machineId: 18:65:90:ff:fe:ce:5d:59 (auto-detected)
+2018-12-23 22:59:55,035 - -Dio.netty.leakDetection.level: simple
+2018-12-23 22:59:55,036 - -Dio.netty.leakDetection.targetRecords: 4
+2018-12-23 22:59:55,060 - -Dio.netty.allocator.numHeapArenas: 16
+2018-12-23 22:59:55,060 - -Dio.netty.allocator.numDirectArenas: 16
+2018-12-23 22:59:55,060 - -Dio.netty.allocator.pageSize: 8192
+2018-12-23 22:59:55,060 - -Dio.netty.allocator.maxOrder: 11
+2018-12-23 22:59:55,060 - -Dio.netty.allocator.chunkSize: 16777216
+2018-12-23 22:59:55,060 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-12-23 22:59:55,060 - -Dio.netty.allocator.smallCacheSize: 256
+2018-12-23 22:59:55,060 - -Dio.netty.allocator.normalCacheSize: 64
+2018-12-23 22:59:55,060 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-12-23 22:59:55,061 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-12-23 22:59:55,061 - -Dio.netty.allocator.useCacheForAllThreads: true
+2018-12-23 22:59:55,069 - -Dio.netty.allocator.type: pooled
+2018-12-23 22:59:55,069 - -Dio.netty.threadLocalDirectBufferSize: 0
+2018-12-23 22:59:55,069 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-12-23 22:59:55,083 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x74b7231d]'
+2018-12-23 22:59:55,095 - server started @ 100.67.246.121:45455
+
+2018-12-23 23:08:17,531 - local IP : 100.67.246.121
+2018-12-23 23:08:17,551 - Using SLF4J as the default logging framework
+2018-12-23 23:08:17,558 - -Dio.netty.eventLoopThreads: 16
+2018-12-23 23:08:17,579 - -Dio.netty.noKeySetOptimization: false
+2018-12-23 23:08:17,579 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-12-23 23:08:17,594 - Platform: MacOS
+2018-12-23 23:08:17,595 - -Dio.netty.noUnsafe: false
+2018-12-23 23:08:17,595 - Java version: 8
+2018-12-23 23:08:17,596 - sun.misc.Unsafe.theUnsafe: available
+2018-12-23 23:08:17,598 - sun.misc.Unsafe.copyMemory: available
+2018-12-23 23:08:17,598 - java.nio.Buffer.address: available
+2018-12-23 23:08:17,599 - direct buffer constructor: available
+2018-12-23 23:08:17,600 - java.nio.Bits.unaligned: available, true
+2018-12-23 23:08:17,600 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2018-12-23 23:08:17,600 - java.nio.DirectByteBuffer.<init>(long, int): available
+2018-12-23 23:08:17,600 - sun.misc.Unsafe: available
+2018-12-23 23:08:17,600 - -Dio.netty.tmpdir: /var/folders/9y/_b1p_yfs7cd3qts9g225jdqw0000gn/T (java.io.tmpdir)
+2018-12-23 23:08:17,600 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-12-23 23:08:17,601 - -Dio.netty.maxDirectMemory: 3817865216 bytes
+2018-12-23 23:08:17,602 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2018-12-23 23:08:17,602 - java.nio.ByteBuffer.cleaner(): available
+2018-12-23 23:08:17,603 - -Dio.netty.noPreferDirect: false
+2018-12-23 23:08:17,614 - org.jctools-core.MpscChunkedArrayQueue: available
+2018-12-23 23:08:17,631 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2018-12-23 23:08:17,631 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2018-12-23 23:08:17,816 - -Dio.netty.processId: 5558 (auto-detected)
+2018-12-23 23:08:17,819 - -Djava.net.preferIPv4Stack: false
+2018-12-23 23:08:17,819 - -Djava.net.preferIPv6Addresses: false
+2018-12-23 23:08:17,820 - Loopback interface: [lo0, lo0, 0:0:0:0:0:0:0:1] ({}, {})
+2018-12-23 23:08:17,821 - Failed to get SOMAXCONN from sysctl and file /proc/sys/net/core/somaxconn. Default: 128
+2018-12-23 23:08:17,826 - -Dio.netty.machineId: 18:65:90:ff:fe:ce:5d:59 (auto-detected)
+2018-12-23 23:08:17,838 - -Dio.netty.leakDetection.level: simple
+2018-12-23 23:08:17,838 - -Dio.netty.leakDetection.targetRecords: 4
+2018-12-23 23:08:17,866 - -Dio.netty.allocator.numHeapArenas: 16
+2018-12-23 23:08:17,866 - -Dio.netty.allocator.numDirectArenas: 16
+2018-12-23 23:08:17,866 - -Dio.netty.allocator.pageSize: 8192
+2018-12-23 23:08:17,866 - -Dio.netty.allocator.maxOrder: 11
+2018-12-23 23:08:17,866 - -Dio.netty.allocator.chunkSize: 16777216
+2018-12-23 23:08:17,866 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-12-23 23:08:17,866 - -Dio.netty.allocator.smallCacheSize: 256
+2018-12-23 23:08:17,866 - -Dio.netty.allocator.normalCacheSize: 64
+2018-12-23 23:08:17,867 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-12-23 23:08:17,867 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-12-23 23:08:17,867 - -Dio.netty.allocator.useCacheForAllThreads: true
+2018-12-23 23:08:17,874 - -Dio.netty.allocator.type: pooled
+2018-12-23 23:08:17,874 - -Dio.netty.threadLocalDirectBufferSize: 0
+2018-12-23 23:08:17,874 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-12-23 23:08:17,888 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0xb1e8a076]'
+2018-12-23 23:08:17,900 - server started @ 100.67.246.121:45455
+
+2018-12-23 23:08:18,081 - -Dio.netty.recycler.maxCapacityPerThread: 4096
+2018-12-23 23:08:18,081 - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+2018-12-23 23:08:18,081 - -Dio.netty.recycler.linkCapacity: 16
+2018-12-23 23:08:18,081 - -Dio.netty.recycler.ratio: 8
+2018-12-23 23:08:18,088 - -Dio.netty.buffer.checkAccessible: true
+2018-12-23 23:08:18,088 - -Dio.netty.buffer.checkBounds: true
+2018-12-23 23:08:18,089 - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@58babc1e
+2018-12-23 23:08:18,429 - connection comes : 100.67.24.99
+2018-12-23 23:08:18,514 - start link 100.67.24.99
+2018-12-23 23:08:18,514 - link complete
+2018-12-23 23:11:24,367 - local IP : 100.67.246.121
+2018-12-23 23:11:24,385 - Using SLF4J as the default logging framework
+2018-12-23 23:11:24,392 - -Dio.netty.eventLoopThreads: 16
+2018-12-23 23:11:24,412 - -Dio.netty.noKeySetOptimization: false
+2018-12-23 23:11:24,412 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-12-23 23:11:24,427 - Platform: MacOS
+2018-12-23 23:11:24,428 - -Dio.netty.noUnsafe: false
+2018-12-23 23:11:24,428 - Java version: 8
+2018-12-23 23:11:24,429 - sun.misc.Unsafe.theUnsafe: available
+2018-12-23 23:11:24,431 - sun.misc.Unsafe.copyMemory: available
+2018-12-23 23:11:24,431 - java.nio.Buffer.address: available
+2018-12-23 23:11:24,432 - direct buffer constructor: available
+2018-12-23 23:11:24,433 - java.nio.Bits.unaligned: available, true
+2018-12-23 23:11:24,433 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2018-12-23 23:11:24,433 - java.nio.DirectByteBuffer.<init>(long, int): available
+2018-12-23 23:11:24,433 - sun.misc.Unsafe: available
+2018-12-23 23:11:24,433 - -Dio.netty.tmpdir: /var/folders/9y/_b1p_yfs7cd3qts9g225jdqw0000gn/T (java.io.tmpdir)
+2018-12-23 23:11:24,433 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-12-23 23:11:24,435 - -Dio.netty.maxDirectMemory: 3817865216 bytes
+2018-12-23 23:11:24,435 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2018-12-23 23:11:24,436 - java.nio.ByteBuffer.cleaner(): available
+2018-12-23 23:11:24,436 - -Dio.netty.noPreferDirect: false
+2018-12-23 23:11:24,447 - org.jctools-core.MpscChunkedArrayQueue: available
+2018-12-23 23:11:24,464 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2018-12-23 23:11:24,464 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2018-12-23 23:11:24,647 - -Dio.netty.processId: 5573 (auto-detected)
+2018-12-23 23:11:24,651 - -Djava.net.preferIPv4Stack: false
+2018-12-23 23:11:24,651 - -Djava.net.preferIPv6Addresses: false
+2018-12-23 23:11:24,652 - Loopback interface: [lo0, lo0, 0:0:0:0:0:0:0:1] ({}, {})
+2018-12-23 23:11:24,652 - Failed to get SOMAXCONN from sysctl and file /proc/sys/net/core/somaxconn. Default: 128
+2018-12-23 23:11:24,656 - -Dio.netty.machineId: 18:65:90:ff:fe:ce:5d:59 (auto-detected)
+2018-12-23 23:11:24,668 - -Dio.netty.leakDetection.level: simple
+2018-12-23 23:11:24,669 - -Dio.netty.leakDetection.targetRecords: 4
+2018-12-23 23:11:24,695 - -Dio.netty.allocator.numHeapArenas: 16
+2018-12-23 23:11:24,695 - -Dio.netty.allocator.numDirectArenas: 16
+2018-12-23 23:11:24,696 - -Dio.netty.allocator.pageSize: 8192
+2018-12-23 23:11:24,696 - -Dio.netty.allocator.maxOrder: 11
+2018-12-23 23:11:24,696 - -Dio.netty.allocator.chunkSize: 16777216
+2018-12-23 23:11:24,696 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-12-23 23:11:24,696 - -Dio.netty.allocator.smallCacheSize: 256
+2018-12-23 23:11:24,696 - -Dio.netty.allocator.normalCacheSize: 64
+2018-12-23 23:11:24,696 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-12-23 23:11:24,696 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-12-23 23:11:24,696 - -Dio.netty.allocator.useCacheForAllThreads: true
+2018-12-23 23:11:24,704 - -Dio.netty.allocator.type: pooled
+2018-12-23 23:11:24,704 - -Dio.netty.threadLocalDirectBufferSize: 0
+2018-12-23 23:11:24,704 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-12-23 23:11:24,718 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x6076df2f]'
+2018-12-23 23:11:24,730 - server started @ 100.67.246.121:45455
+
+2018-12-23 23:11:24,839 - -Dio.netty.recycler.maxCapacityPerThread: 4096
+2018-12-23 23:11:24,839 - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+2018-12-23 23:11:24,840 - -Dio.netty.recycler.linkCapacity: 16
+2018-12-23 23:11:24,840 - -Dio.netty.recycler.ratio: 8
+2018-12-23 23:11:24,846 - -Dio.netty.buffer.checkAccessible: true
+2018-12-23 23:11:24,846 - -Dio.netty.buffer.checkBounds: true
+2018-12-23 23:11:24,847 - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@1d6ec00f
+2018-12-23 23:11:26,080 - connection comes : 100.67.24.99
+2018-12-23 23:11:26,113 - start link 100.67.24.99
+2018-12-23 23:11:26,114 - link complete
+2018-12-23 23:11:31,367 - start quit 100.67.24.99
+2018-12-23 23:11:31,372 - quit complete
+2018-12-23 23:11:31,381 - Freed 2 thread-local buffer(s) from thread: nioEventLoopGroup-3-1
+2018-12-23 23:11:31,571 - connection leaves : 100.67.24.99
+2018-12-23 23:11:51,801 - local IP : 100.67.246.121
+2018-12-23 23:11:51,820 - Using SLF4J as the default logging framework
+2018-12-23 23:11:51,827 - -Dio.netty.eventLoopThreads: 16
+2018-12-23 23:11:51,848 - -Dio.netty.noKeySetOptimization: false
+2018-12-23 23:11:51,849 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-12-23 23:11:51,864 - Platform: MacOS
+2018-12-23 23:11:51,866 - -Dio.netty.noUnsafe: false
+2018-12-23 23:11:51,866 - Java version: 8
+2018-12-23 23:11:51,867 - sun.misc.Unsafe.theUnsafe: available
+2018-12-23 23:11:51,869 - sun.misc.Unsafe.copyMemory: available
+2018-12-23 23:11:51,869 - java.nio.Buffer.address: available
+2018-12-23 23:11:51,870 - direct buffer constructor: available
+2018-12-23 23:11:51,871 - java.nio.Bits.unaligned: available, true
+2018-12-23 23:11:51,871 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2018-12-23 23:11:51,871 - java.nio.DirectByteBuffer.<init>(long, int): available
+2018-12-23 23:11:51,871 - sun.misc.Unsafe: available
+2018-12-23 23:11:51,871 - -Dio.netty.tmpdir: /var/folders/9y/_b1p_yfs7cd3qts9g225jdqw0000gn/T (java.io.tmpdir)
+2018-12-23 23:11:51,871 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-12-23 23:11:51,875 - -Dio.netty.maxDirectMemory: 3817865216 bytes
+2018-12-23 23:11:51,875 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2018-12-23 23:11:51,876 - java.nio.ByteBuffer.cleaner(): available
+2018-12-23 23:11:51,876 - -Dio.netty.noPreferDirect: false
+2018-12-23 23:11:51,888 - org.jctools-core.MpscChunkedArrayQueue: available
+2018-12-23 23:11:51,906 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2018-12-23 23:11:51,906 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2018-12-23 23:11:51,958 - -Dio.netty.processId: 5578 (auto-detected)
+2018-12-23 23:11:51,961 - -Djava.net.preferIPv4Stack: false
+2018-12-23 23:11:51,961 - -Djava.net.preferIPv6Addresses: false
+2018-12-23 23:11:51,962 - Loopback interface: [lo0, lo0, 0:0:0:0:0:0:0:1] ({}, {})
+2018-12-23 23:11:51,963 - Failed to get SOMAXCONN from sysctl and file /proc/sys/net/core/somaxconn. Default: 128
+2018-12-23 23:11:51,966 - -Dio.netty.machineId: 18:65:90:ff:fe:ce:5d:59 (auto-detected)
+2018-12-23 23:11:51,978 - -Dio.netty.leakDetection.level: simple
+2018-12-23 23:11:51,979 - -Dio.netty.leakDetection.targetRecords: 4
+2018-12-23 23:11:52,005 - -Dio.netty.allocator.numHeapArenas: 16
+2018-12-23 23:11:52,006 - -Dio.netty.allocator.numDirectArenas: 16
+2018-12-23 23:11:52,006 - -Dio.netty.allocator.pageSize: 8192
+2018-12-23 23:11:52,006 - -Dio.netty.allocator.maxOrder: 11
+2018-12-23 23:11:52,006 - -Dio.netty.allocator.chunkSize: 16777216
+2018-12-23 23:11:52,006 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-12-23 23:11:52,006 - -Dio.netty.allocator.smallCacheSize: 256
+2018-12-23 23:11:52,006 - -Dio.netty.allocator.normalCacheSize: 64
+2018-12-23 23:11:52,006 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-12-23 23:11:52,007 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-12-23 23:11:52,007 - -Dio.netty.allocator.useCacheForAllThreads: true
+2018-12-23 23:11:52,016 - -Dio.netty.allocator.type: pooled
+2018-12-23 23:11:52,017 - -Dio.netty.threadLocalDirectBufferSize: 0
+2018-12-23 23:11:52,017 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-12-23 23:11:52,034 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x216896c1]'
+2018-12-23 23:11:52,051 - server started @ 100.67.246.121:45455
+
+2018-12-23 23:11:52,155 - -Dio.netty.recycler.maxCapacityPerThread: 4096
+2018-12-23 23:11:52,155 - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+2018-12-23 23:11:52,155 - -Dio.netty.recycler.linkCapacity: 16
+2018-12-23 23:11:52,155 - -Dio.netty.recycler.ratio: 8
+2018-12-23 23:11:52,162 - -Dio.netty.buffer.checkAccessible: true
+2018-12-23 23:11:52,162 - -Dio.netty.buffer.checkBounds: true
+2018-12-23 23:11:52,163 - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@1ec8bee6
+2018-12-23 23:11:52,364 - connection comes : 100.67.24.99
+2018-12-23 23:11:52,420 - start link 100.67.24.99
+2018-12-23 23:11:52,420 - link complete
+2018-12-23 23:11:56,865 - start quit 100.67.24.99
+2018-12-23 23:11:56,870 - quit complete
+2018-12-23 23:11:56,878 - Freed 2 thread-local buffer(s) from thread: nioEventLoopGroup-3-1
+2018-12-23 23:11:57,058 - connection leaves : 100.67.24.99

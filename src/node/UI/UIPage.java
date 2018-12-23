@@ -14,10 +14,12 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.*;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static node.NodeContext.*;
 
 public class UIPage {
+    private static JLabel neighborsLabel = new JLabel();
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -31,7 +33,7 @@ public class UIPage {
         NodeClient.start(NodeContext.START_IP, NodeContext.SERVER_POST);
 
         buildTopology();
-        System.out.println(neighbors);
+        System.out.println(neighborsLabel);
     }
 
     public static void initUI() {
@@ -159,8 +161,13 @@ public class UIPage {
         panel3.add(button3, BorderLayout.SOUTH);
 
         mainPanel.add(panel3, BorderLayout.EAST);
-
         frame.add(mainPanel);
+
+        JPanel p = new JPanel(new BorderLayout());
+        // 表头（列名）
+        neighborsLabel.setText("<html><body><p>邻居节点ip</p><br><p>l</p><body></html>");
+        p.add(neighborsLabel, BorderLayout.SOUTH);
+        frame.add(p, BorderLayout.SOUTH);
 
         frame.setVisible(true);// 设置窗体为可见
     }
@@ -368,5 +375,14 @@ public class UIPage {
                 NodeContext.updateFile(response.getSaveIp(), response.completeName(), bytes);
             }
         }
+    }
+
+    public static void updateNeiLabel(ConcurrentHashMap<String, NodeClient> neighbors) {
+        StringBuilder str = new StringBuilder("<html><body><p>邻居节点ip</p>");
+        for (String ip : neighbors.keySet()) {
+            str.append("<br><p>"+ip+"</p>");
+        }
+        str.append("<body></html>");
+        neighborsLabel.setText(str.toString());
     }
 }

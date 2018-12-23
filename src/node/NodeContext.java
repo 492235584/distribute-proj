@@ -1,5 +1,6 @@
 package node;
 
+import node.UI.UIPage;
 import node.requestpojo.FileDownloadMessage;
 import node.requestpojo.FileSaveMessage;
 import node.requestpojo.FileSearchMessage;
@@ -83,6 +84,8 @@ public class NodeContext {
                 client.link(messageId);
             }
         }
+
+        UIPage.updateNeiLabel(neighbors);
     }
 
     /**
@@ -113,6 +116,7 @@ public class NodeContext {
                 neighbors.remove(ip);
             }
         }
+        UIPage.updateNeiLabel(neighbors);
     }
 
     // 正确的IP拿法，即优先拿site-local地址

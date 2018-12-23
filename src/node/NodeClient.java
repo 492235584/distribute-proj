@@ -2,6 +2,7 @@ package node;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import node.UI.UIPage;
 import node.requestpojo.DistributeCalculateMessage;
 import node.requestpojo.FileDownloadMessage;
 import node.requestpojo.FileSaveMessage;
@@ -110,6 +111,8 @@ public class NodeClient {
             neighbors.put(serverIp, client);
             String messageId = RequestId.next();
             client.link(messageId);
+
+            UIPage.updateNeiLabel(neighbors);
         }
     }
 
