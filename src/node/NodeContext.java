@@ -202,7 +202,7 @@ public class NodeContext {
      * @param end
      * @return
      */
-    private static byte[] subBytes(byte[] bytes, int start, int end) {
+    public static byte[] subBytes(byte[] bytes, int start, int end) {
         byte[] sub = new byte[end - start];
         for (int i = start; i < end; i++) {
             sub[i - start] = bytes[i];
@@ -288,6 +288,31 @@ public class NodeContext {
 
         return files;
     }
+
+    /**
+     * update file by data
+     *
+     * @param target node
+     * @param completeName
+     * @param data new data
+     */
+    public static void updateFile(String target, String completeName, byte[] data) {
+        String messageId = RequestId.next();
+        FileSaveMessage message = new FileSaveMessage(messageId, completeName, null, data);
+
+        boolean isTmp = false;
+        NodeClient client = neighbors.get(target);
+        if (client == null) {
+            isTmp = true;
+            client = new NodeClient(new RPCClient(target, NodeContext.SERVER_POST));
+        }
+        client.saveFile(message);
+        // if client is temporary
+        if (isTmp) {
+            client.close();
+        }
+    }
+
 
     public static byte[] readFile(String path) {
         BufferedInputStream bufIn = null;

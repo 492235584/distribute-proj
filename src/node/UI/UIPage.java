@@ -339,9 +339,25 @@ public class UIPage {
      * @param list
      */
     private static void update(List<FileSearchResponse> list, byte[] bytes) {
-
-
-
-        return;
+        if (list == null || list.size() == 0) {
+            return;
+        }
+        int byteNum = bytes.length / list.size();
+        for (FileSearchResponse response : list) {
+            if (response.getTotalPart() == 1) {
+                NodeContext.updateFile(response.getSaveIp(), response.completeName(), bytes);
+            } else {
+                int part = response.getPart();
+                // get subdata
+                int start = (part - 1) * byteNum;
+                int end = part * byteNum;
+                if (part == response.getTotalPart()) {
+                    end = bytes.length;
+                }
+                byte[] sub = NodeContext.subBytes(bytes, start, end);
+                // update
+                NodeContext.updateFile(response.getSaveIp(), response.completeName(), bytes);
+            }
+        }
     }
 }
