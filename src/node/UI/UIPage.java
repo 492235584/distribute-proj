@@ -10,6 +10,8 @@ import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.*;
 import java.util.List;
 
@@ -27,7 +29,6 @@ public class UIPage {
     public static void initNode() {
         NodeServer.start(NodeContext.LOCAL_IP);
         NodeClient.start(NodeContext.START_IP, NodeContext.SERVER_POST);
-
 
         buildTopology();
         System.out.println(neighbors);
@@ -49,7 +50,13 @@ public class UIPage {
         frame.setBackground(Color.white);
         // 4.设置窗体对象的属性值：标题、大小、显示位置、关闭操作、布局、禁止调整大小、可见、...
         frame.setSize(700, 600);// 设置窗体的大小，单位是像素
-        frame.setDefaultCloseOperation(3);// 设置窗体的关闭操作；3表示关闭窗体退出程序；2、1、0
+        // close event
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                NodeContext.quit();
+                System.exit(0);
+            }
+        });
 //        frame.setLocationRelativeTo(null);// 设置窗体相对于另一个组件的居中位置，参数null表示窗体相对于屏幕的中央位置
         frame.setResizable(false);// 设置禁止调整窗体大小
 

@@ -33,6 +33,7 @@ public class NodeClient {
                 rpc("searchFile_res", Set.class).
                 rpc("download_res", Boolean.class).
                 rpc("link_res", Boolean.class).
+                rpc("quit_res", Boolean.class).
                 rpc("distributeCalculate_res", List.class);
     }
 
@@ -58,9 +59,24 @@ public class NodeClient {
         return result;
     }
 
+    /**
+     * link node
+     *
+     * @param messageId
+     */
     public void link(String messageId) {
         messageSearched.put(messageId, 1);
         client.send("link", messageId);
+    }
+
+    /**
+     * quit network
+     *
+     * @param messageId
+     */
+    public boolean quit(String messageId) {
+        messageSearched.put(messageId, 1);
+        return client.send("quit", messageId);
     }
 
     public void saveFile(FileSaveMessage message) {

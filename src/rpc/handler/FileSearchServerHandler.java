@@ -23,6 +23,7 @@ public class FileSearchServerHandler implements IMessageHandler<FileSearchMessag
         searched.add(NodeContext.LOCAL_IP);
         String messageId = message.getMessageId();
         String key = message.getKey();
+
         // if this message have searched before, ignore it
         if (messageSearched.containsKey(messageId)) {
             ctx.writeAndFlush(new MessageOutput(requestId, "searchFile_res", null));

@@ -85,6 +85,36 @@ public class NodeContext {
         }
     }
 
+    /**
+     * quit this node
+     */
+    public static void quit() {
+        quit(LOCAL_IP);
+    }
+
+    /**
+     * quit ip from system
+     */
+    public static void quit(String ip) {
+        // this node quit
+        if (LOCAL_IP.equals(ip)) {
+            String messageId = RequestId.next();
+            for (Map.Entry<String, NodeClient> n : neighbors.entrySet()) {
+                NodeClient client = n.getValue();
+                boolean result = client.quit(messageId);
+                if (result == true) {
+                    client.close();
+                }
+            }
+        } else { // delete a neighbor
+            NodeClient client = neighbors.get(ip);
+            if (client != null) {
+                client.close();
+                neighbors.remove(ip);
+            }
+        }
+    }
+
     // 正确的IP拿法，即优先拿site-local地址
     private static String getLocalHostLANIp() {
         try {
