@@ -30,9 +30,9 @@ public class SearchNodeServerHandler implements IMessageHandler<NodeSearchMessag
         messageSearched.put(messageId, 1);
         // return LOCAL_IP of neighbors
 
-        LOG.info("start search node");
+        LOG.debug("start search node");
         Set<String> allIp = NodeContext.searchNode(messageId, searched);
-        LOG.info("search node complete");
+        LOG.debug("search node complete");
 
         ctx.writeAndFlush(new MessageOutput(requestId, "search_res", allIp));
     }
