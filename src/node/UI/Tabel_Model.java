@@ -8,14 +8,14 @@ class Table_Model extends AbstractTableModel {
 
     private Vector content = null;
 
-    private String[] title_name = { "filename", "ip", "size","download","update"};
+    private String[] title_name = {"filename", "source", "size", "download", "update"};
 
     public Table_Model() {
         content = new Vector();
     }
 
     /**
-     * 加入一行内容 
+     * 加入一行内容
      */
     public void addRow(String name, String ip, String size) {
         Vector v = new Vector();
