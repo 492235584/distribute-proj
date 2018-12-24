@@ -6,7 +6,7 @@ import rpc.server.RPCServer;
 
 public class NodeServer {
     public static void start(String ip) {
-        RPCServer server = new RPCServer(ip, 45455, 4, 16);
+        RPCServer server = new RPCServer(ip, NodeContext.SERVER_POST, 4, 16);
         server.service("search", NodeSearchMessage.class, new SearchNodeServerHandler()).
                 service("save", FileSaveMessage.class, new FileSaveServerHandler()).
                 service("download", FileDownloadMessage.class, new FileDownloadServerHandler()).
