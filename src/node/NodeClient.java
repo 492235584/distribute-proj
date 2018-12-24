@@ -3,10 +3,7 @@ package node;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import node.UI.UIPage;
-import node.requestpojo.DistributeCalculateMessage;
-import node.requestpojo.FileDownloadMessage;
-import node.requestpojo.FileSaveMessage;
-import node.requestpojo.FileSearchMessage;
+import node.requestpojo.*;
 import node.responsepojo.CalculationResultResponse;
 import node.responsepojo.FileSearchResponse;
 import rpc.client.RPCClient;
@@ -30,7 +27,7 @@ public class NodeClient {
     public NodeClient(RPCClient client) {
         this.client = client;
         // there should register all
-        this.client.rpc("search_res", List.class).
+        this.client.rpc("search_res", Set.class).
                 rpc("save_res", Boolean.class).
                 rpc("searchFile_res", Set.class).
                 rpc("download_res", Boolean.class).
@@ -39,9 +36,9 @@ public class NodeClient {
                 rpc("distributeCalculate_res", CalculationResultResponse.class);
     }
 
-    public List<String> searchNode(String messageId) {
-        messageSearched.put(messageId, 1);
-        return (List<String>) client.send("search", messageId);
+    public Set<String> searchNode(NodeSearchMessage message) {
+        messageSearched.put(message.getMessageId(), 1);
+        return (Set<String>) client.send("search", message);
     }
 
     public Set<FileSearchResponse> searchFile(FileSearchMessage message) {

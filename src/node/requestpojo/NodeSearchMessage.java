@@ -7,14 +7,9 @@ public class NodeSearchMessage {
     private String messageId;
     private List<String> searched;
 
-    public NodeSearchMessage(String messageId, List<String> searched, String key) {
+    public NodeSearchMessage(String messageId, List<String> searched) {
         this.messageId = messageId;
         this.searched = searched;
-    }
-
-    public NodeSearchMessage(String messageId, String key) {
-        this.messageId = messageId;
-        searched = new ArrayList<>();
     }
 
     public String getMessageId() {

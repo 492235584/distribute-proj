@@ -4,6 +4,7 @@ import node.UI.UIPage;
 import node.requestpojo.FileDownloadMessage;
 import node.requestpojo.FileSaveMessage;
 import node.requestpojo.FileSearchMessage;
+import node.requestpojo.NodeSearchMessage;
 import node.responsepojo.FileSearchResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,16 +55,10 @@ public class NodeContext {
      */
     public static void buildTopology() {
         // use to collect other LOCAL_IP
-        List<String> otherIp = new ArrayList<>();
+        Set<String> otherIp = new HashSet<>();
 
-        // search by neighbors us identity message id
-        String messageId = RequestId.next();
-        for (Map.Entry<String, NodeClient> n : neighbors.entrySet()) {
-            List<String> find = n.getValue().searchNode(messageId);
-            if (find != null) {
-                otherIp.addAll(find);
-            }
-        }
+        // search node in system
+        otherIp = searchNode();
 
         // build no more than three link
         int linkNum = neighbors.size();
@@ -80,7 +75,7 @@ public class NodeContext {
                 NodeClient client = new NodeClient(new RPCClient(ip, SERVER_POST));
                 neighbors.put(ip, client);
                 linkNum++;
-                messageId = RequestId.next();
+                String messageId = RequestId.next();
                 client.link(messageId);
             }
         }
@@ -278,6 +273,50 @@ public class NodeContext {
         filenameAndStatus.put(newName, true);
     }
 
+    /**
+     * search node
+     *
+     * @return list of ip
+     */
+    public static Set<String> searchNode() {
+        String messageId = RequestId.next();
+        List<String> searched = new ArrayList<>();
+        searched.add(LOCAL_IP);
+        return searchNode(messageId, searched);
+    }
+
+    /**
+     * search node
+     *
+     * @return list of ip
+     */
+    public static Set<String> searchNode(String messageId, List<String> searched) {
+        // add searched
+        searched.add(LOCAL_IP);
+
+        Set<String> nodes = new HashSet();
+        // add all filename in this node to set
+        Enumeration<String> keys = neighbors.keys();
+        while (keys.hasMoreElements()) {
+            String ip = keys.nextElement();
+            nodes.add(ip);
+        }
+
+        // add all neighbor's neighbors
+        for (Map.Entry<String, NodeClient> n : neighbors.entrySet()) {
+            // skip searched node
+            if (searched != null && searched.contains(n.getKey())) {
+                continue;
+            }
+
+            Set<String> find = n.getValue().searchNode(new NodeSearchMessage(messageId, searched));
+            if (find != null) {
+                nodes.addAll(find);
+            }
+        }
+
+        return nodes;
+    }
 
     /**
      * search file
@@ -287,7 +326,6 @@ public class NodeContext {
     public static Set<FileSearchResponse> searchFile(String key) {
         String messageId = RequestId.next();
         List<String> searched = new ArrayList<>();
-        searched.add(LOCAL_IP);
         return searchFile(messageId, key, searched);
     }
 
@@ -297,6 +335,9 @@ public class NodeContext {
      * @return
      */
     public static Set<FileSearchResponse> searchFile(String messageId, String key, List<String> searched) {
+        // add searced
+        searched.add(LOCAL_IP);
+
         Set<FileSearchResponse> files = new HashSet();
         // add all filename in this node to set
         Enumeration<String> keys = filenameAndStatus.keys();
@@ -326,9 +367,9 @@ public class NodeContext {
     /**
      * update file by data
      *
-     * @param target node
+     * @param target       node
      * @param completeName
-     * @param data new data
+     * @param data         new data
      */
     public static void updateFile(String target, String completeName, byte[] data) {
         String messageId = RequestId.next();
