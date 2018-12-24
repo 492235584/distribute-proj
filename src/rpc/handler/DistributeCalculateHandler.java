@@ -20,9 +20,9 @@ public class DistributeCalculateHandler implements IMessageHandler<DistributeCal
     @Override
     public void handle(ChannelHandlerContext ctx, String requestId, DistributeCalculateMessage message) {
         LOG.info("receive the calculate data");
-        HashMap<String,Integer> myResult1,result1;
+        Map<String,Integer> myResult1,result1;
         int[][] myResult2,result2;
-        HashMap<String,HashMap<String,Double>> myResult3,result3;
+        Map<String,Map<String,Double>> myResult3,result3;
 
         String messageId=message.getMessageId();
         String srcIp=message.getSrcIp();

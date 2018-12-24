@@ -3366,3 +3366,82 @@ Caused by: java.net.ConnectException: Connection refused
 2018-12-24 20:01:15,263 - connection comes : 100.66.228.198
 2018-12-24 20:01:15,334 - start link 100.66.228.198
 2018-12-24 20:01:15,334 - link complete
+2018-12-24 20:15:49,899 - local IP : 100.67.154.55
+2018-12-24 20:15:52,186 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x86e0ff16]'
+2018-12-24 20:15:52,201 - server started @ 100.67.154.55:45455
+
+2018-12-24 20:15:52,859 - connection comes : 100.66.228.198
+2018-12-24 20:15:52,921 - start link 100.66.228.198
+2018-12-24 20:15:52,921 - link complete
+2018-12-24 20:16:14,703 - start save file : 100.66.216.212-=-slf4j-api-1.7.25.jar
+2018-12-24 20:16:14,703 - file save complete : 100.66.216.212-=-slf4j-api-1.7.25.jar
+2018-12-24 20:16:14,724 - download complete : 100.66.216.212-=-slf4j-api-1.7.25.jar
+2018-12-24 20:16:54,276 - start save file : 100.67.246.121-=-jhtp10_ch19.ppt
+2018-12-24 20:16:54,283 - file save complete : 100.67.246.121-=-jhtp10_ch19.ppt
+2018-12-24 20:16:54,300 - download complete : 100.67.246.121-=-jhtp10_ch19.ppt
+2018-12-24 20:19:17,113 - local IP : 100.67.154.55
+2018-12-24 20:19:19,312 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x85e3b10e]'
+2018-12-24 20:19:19,326 - server started @ 100.67.154.55:45455
+
+2018-12-24 20:19:40,762 - connection comes : 100.66.228.198
+2018-12-24 20:19:40,802 - start link 100.66.228.198
+2018-12-24 20:19:40,802 - link complete
+2018-12-24 20:20:00,364 - connection comes : 100.67.24.99
+2018-12-24 20:20:00,368 - start link 100.67.24.99
+2018-12-24 20:20:00,476 - link complete
+2018-12-24 20:20:44,403 - connection comes : 100.67.8.85
+2018-12-24 20:20:44,475 - start link 100.67.8.85
+2018-12-24 20:20:45,072 - link complete
+2018-12-24 20:23:54,376 - start save file : workspace.xml
+2018-12-24 20:23:54,376 - file save complete : workspace.xml
+2018-12-24 20:25:58,773 - start save file : 100.67.154.55-=-smallfile.txt
+2018-12-24 20:25:58,774 - file save complete : 100.67.154.55-=-smallfile.txt
+2018-12-24 20:29:24,086 - connection comes : 100.67.154.55
+2018-12-24 20:31:40,010 - local IP : 100.67.154.55
+2018-12-24 20:31:42,104 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x3c741aa5]'
+2018-12-24 20:31:42,118 - server started @ 100.67.154.55:45455
+
+2018-12-24 20:31:42,232 - connection comes : 100.67.8.85
+2018-12-24 20:31:42,311 - connection comes : 100.66.228.198
+2018-12-24 20:31:42,355 - start link 100.66.228.198
+2018-12-24 20:31:42,355 - link complete
+2018-12-24 20:31:42,523 - connection comes : 100.67.24.99
+2018-12-24 20:31:42,525 - start link 100.67.24.99
+2018-12-24 20:31:42,525 - link complete
+2018-12-24 20:31:58,082 - connection comes : 100.67.154.55
+2018-12-24 20:34:05,103 - local IP : 100.67.154.55
+2018-12-24 20:34:07,253 - Unknown channel option 'TCP_NODELAY' for channel '[id: 0x73adde2e]'
+2018-12-24 20:34:07,266 - server started @ 100.67.154.55:45455
+
+2018-12-24 20:34:07,432 - connection comes : 100.66.228.198
+2018-12-24 20:34:07,474 - start link 100.66.228.198
+2018-12-24 20:34:07,474 - link complete
+2018-12-24 20:34:07,606 - connection comes : 100.67.8.85
+2018-12-24 20:34:07,614 - start link 100.67.8.85
+2018-12-24 20:34:07,614 - link complete
+2018-12-24 20:34:07,696 - connection comes : 100.67.24.99
+2018-12-24 20:34:07,697 - start link 100.67.24.99
+2018-12-24 20:34:07,697 - link complete
+2018-12-24 20:34:39,454 - connection comes : 100.67.154.55
+2018-12-24 20:34:39,459 - start save file : 100.67.154.55-=-smallfile.txt
+2018-12-24 20:34:39,459 - file save complete : 100.67.154.55-=-smallfile.txt
+2018-12-24 20:35:47,789 - connection comes : 100.67.154.55
+2018-12-24 20:35:47,790 - start save file : 100.67.154.55-=-smallfile.txt
+2018-12-24 20:35:47,790 - file save complete : 100.67.154.55-=-smallfile.txt
+2018-12-24 20:37:23,456 - connection comes : 100.67.154.55
+2018-12-24 20:37:24,814 - start save file : 100.67.154.55-=-bigfile.txt
+2018-12-24 20:37:24,826 - file save complete : 100.67.154.55-=-bigfile.txt
+2018-12-24 20:38:58,714 - start quit 100.67.8.85
+2018-12-24 20:38:58,720 - quit complete
+2018-12-24 20:39:05,457 - connection comes : 100.67.8.85
+2018-12-24 20:39:05,465 - start link 100.67.8.85
+2018-12-24 20:39:05,503 - link complete
+2018-12-24 20:40:40,004 - start quit 100.67.8.85
+2018-12-24 20:40:40,010 - quit complete
+2018-12-24 20:40:48,976 - connection comes : 100.67.8.85
+2018-12-24 20:40:49,158 - start link 100.67.8.85
+2018-12-24 20:40:49,158 - link complete
+2018-12-24 20:41:11,356 - receive the calculate data
+2018-12-24 20:41:11,505 - calculate calling complete
+2018-12-24 20:46:35,493 - start quit 100.67.8.85
+2018-12-24 20:46:35,503 - quit complete

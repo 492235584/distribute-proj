@@ -79,7 +79,6 @@ public class NodeClient {
     }
 
     public void saveFile(FileSaveMessage message) {
-        messageSearched.put(message.getMessageId(), 1);
         client.send("save", message);
     }
 

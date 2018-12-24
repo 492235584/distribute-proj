@@ -1,23 +1,24 @@
 package node.responsepojo;
 
-import java.util.HashMap;
+
+import java.util.Map;
 
 public class CalculationResultResponse {
-    private HashMap<String,Integer> result1;
+    private Map<String,Integer> result1;
     private int[][] result2;
-    private HashMap<String,HashMap<String,Double>> result3;
+    private Map<String,Map<String,Double>> result3;
 
-    public CalculationResultResponse(HashMap<String,Integer> result1, int[][] result2, HashMap<String,HashMap<String,Double>> result3){
+    public CalculationResultResponse(Map<String,Integer> result1, int[][] result2, Map<String,Map<String,Double>> result3){
         this.result1=result1;
         this.result2=result2;
         this.result3=result3;
     }
 
-    public void setResult1(HashMap<String, Integer> result) {
+    public void setResult1(Map<String, Integer> result) {
         this.result1 = result;
     }
 
-    public HashMap<String,Integer> getResult1(){
+    public Map<String,Integer> getResult1(){
         return result1;
     }
 
@@ -29,11 +30,11 @@ public class CalculationResultResponse {
         return result2;
     }
 
-    public void setResult3(HashMap<String, HashMap<String,Double>> result) {
+    public void setResult3(Map<String, Map<String,Double>> result) {
         this.result3 = result;
     }
 
-    public HashMap<String,HashMap<String,Double>> getResult3(){
+    public Map<String,Map<String,Double>> getResult3(){
         return result3;
     }
 }

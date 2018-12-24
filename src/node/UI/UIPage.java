@@ -19,6 +19,7 @@ import java.util.Timer;
 import java.util.concurrent.ConcurrentHashMap;
 
 import static node.NodeContext.*;
+import static node.DistributeCalculation.*;
 
 public class UIPage {
     private static JLabel neighborsLabel = new JLabel();
@@ -174,6 +175,13 @@ public class UIPage {
         button3.setText("分布式计算");
         button3.setSize(dim32);
         panel3.add(button3, BorderLayout.SOUTH);
+
+        button3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                caculateResult("1.txt",29);
+            }
+        });
 
         mainPanel.add(panel3, BorderLayout.EAST);
         frame.add(mainPanel);
@@ -392,6 +400,7 @@ public class UIPage {
         byte[] bytes = NodeContext.readFile(newfile);
         int byteNum = bytes.length / list.size();
         for (FileSearchResponse response : list) {
+            System.out.println(response.completeName() + response.getSaveIp());
             if (response.getTotalPart() == 1) {
                 NodeContext.updateFile(response.getSaveIp(), response.completeName(), bytes);
             } else {
