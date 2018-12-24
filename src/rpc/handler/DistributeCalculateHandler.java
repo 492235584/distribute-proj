@@ -22,7 +22,7 @@ public class DistributeCalculateHandler implements IMessageHandler<DistributeCal
         LOG.info("receive the calculate data");
         HashMap<String,Integer> myResult1,result1;
         int[][] myResult2,result2;
-        HashMap<String,HashMap<String,Integer>> myResult3,result3;
+        HashMap<String,HashMap<String,Double>> myResult3,result3;
 
         String messageId=message.getMessageId();
         String srcIp=message.getSrcIp();

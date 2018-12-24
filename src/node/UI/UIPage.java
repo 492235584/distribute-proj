@@ -77,10 +77,16 @@ public class UIPage {
         frame.setLayout(fl);
 
         // 实例化JLabel标签对象，该对象显示"账号："
-        JLabel labName = new JLabel("分布式系统设计", JLabel.CENTER);
+        JLabel labName = new JLabel("                分布式系统设计             ", JLabel.CENTER);
         labName.setFont(new Font("黑体", Font.BOLD, 30));
         // 将labName标签添加到窗体上
         frame.add(labName);
+
+        // 实例化JLabel标签对象，该对象显示"账号："
+        JLabel labName1 = new JLabel("  本地ip:" + LOCAL_IP, JLabel.CENTER);
+        labName1.setFont(new Font("黑体", Font.BOLD, 18));
+        // 将labName标签添加到窗体上
+        frame.add(labName1);
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout(30, 10));

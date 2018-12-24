@@ -5,9 +5,9 @@ import java.util.HashMap;
 public class CalculationResultResponse {
     private HashMap<String,Integer> result1;
     private int[][] result2;
-    private HashMap<String,HashMap<String,Integer>> result3;
+    private HashMap<String,HashMap<String,Double>> result3;
 
-    public CalculationResultResponse(HashMap<String,Integer> result1, int[][] result2, HashMap<String,HashMap<String,Integer>> result3){
+    public CalculationResultResponse(HashMap<String,Integer> result1, int[][] result2, HashMap<String,HashMap<String,Double>> result3){
         this.result1=result1;
         this.result2=result2;
         this.result3=result3;
@@ -29,11 +29,11 @@ public class CalculationResultResponse {
         return result2;
     }
 
-    public void setResult3(HashMap<String, HashMap<String,Integer>> result) {
+    public void setResult3(HashMap<String, HashMap<String,Double>> result) {
         this.result3 = result;
     }
 
-    public HashMap<String,HashMap<String,Integer>> getResult3(){
+    public HashMap<String,HashMap<String,Double>> getResult3(){
         return result3;
     }
 }

@@ -12,6 +12,7 @@ import rpc.common.RequestId;
 
 import java.awt.*;
 import java.io.*;
+import java.text.DecimalFormat;
 import java.util.*;
 import static node.NodeContext.*;
 
@@ -23,14 +24,14 @@ public class DistributeCalculation {
         if(data!=null){
             HashMap<String,Integer> result1;
             int[][] result2;
-            HashMap<String,HashMap<String,Integer>> result3;
+            HashMap<String,HashMap<String,Double>> result3;
 
             int length1=(int)Math.floor(data.length*59/60);
             String[] myPart= Arrays.copyOfRange(data,0,length1);
 
             HashMap<String,Integer> myResult1=callingTimes(myPart);
             int[][] myResult2=rateOfMobileCompy(myPart);
-            HashMap<String,HashMap<String,Integer>> myResult3=timeRate(myPart);
+            HashMap<String,HashMap<String,Double>> myResult3=timeRate(myPart);
 
 //            System.out.println(myResult);
             System.out.println(neighbors.size());
@@ -70,9 +71,9 @@ public class DistributeCalculation {
             //do write result into file
             writeResult(myResult1);
 
-            generateChart((double)myResult2[0][0],(double)myResult2[0][1],(double)myResult2[0][2],"市话");
-            generateChart((double)myResult2[1][0],(double)myResult2[1][1],(double)myResult2[1][2],"长途");
-            generateChart((double)myResult2[2][0],(double)myResult2[2][1],(double)myResult2[2][2],"国际");
+            generateChart((double)myResult2[0][0],(double)myResult2[0][1],(double)myResult2[0][2],"Local Call");
+            generateChart((double)myResult2[1][0],(double)myResult2[1][1],(double)myResult2[1][2],"Long-distance Call");
+            generateChart((double)myResult2[2][0],(double)myResult2[2][1],(double)myResult2[2][2],"International Call");
 
             writeResult3(myResult3);
         }
@@ -95,20 +96,21 @@ public class DistributeCalculation {
 
     //计算结果2：生成饼图
     public static void generateChart(Double v1,Double v2,Double v3,String imgName){
+        DecimalFormat df = new DecimalFormat("0.00");
         DefaultPieDataset dataset = new DefaultPieDataset();
-        dataset.setValue("Telecom", v1);
-        dataset.setValue("Mobile", v2);
-        dataset.setValue("Unicom", v3);
+        dataset.setValue("Telecom  "+df.format(v1*100/(v1+v2+v3))+"%", v1);
+        dataset.setValue("Mobile  "+df.format(v2*100/(v1+v2+v3))+"%", v2);
+        dataset.setValue("Unicom  "+df.format(v3*100/(v1+v2+v3))+"%", v3);
 
-        JFreeChart chart = ChartFactory.createPieChart("pieChart", // chart
+        JFreeChart chart = ChartFactory.createPieChart(imgName, // chart
                 dataset, // data
                 true, // include legend
                 true, false);
         setChart(chart);
-        PiePlot pieplot = (PiePlot) chart.getPlot();
-        pieplot.setSectionPaint("Telecom", Color.decode("#749f83"));
-        pieplot.setSectionPaint("Mobile", Color.decode("#2f4554"));
-        pieplot.setSectionPaint("Unicom", Color.decode("#61a0a8"));
+//        PiePlot pieplot = (PiePlot) chart.getPlot();
+//        pieplot.setSectionPaint("Telecom", Color.decode("#749f83"));
+//        pieplot.setSectionPaint("Mobile", Color.decode("#2f4554"));
+//        pieplot.setSectionPaint("Unicom", Color.decode("#61a0a8"));
 
         try {
 //            // 创建图形显示面板
@@ -150,24 +152,26 @@ public class DistributeCalculation {
     }
 
     //计算结果3：
-    public static void writeResult3(HashMap<String,HashMap<String,Integer>> sets){
+    public static void writeResult3(HashMap<String,HashMap<String,Double>> sets){
         try {
             FileWriter writer = new FileWriter("out3.txt",false);
             for(String key:sets.keySet())
             {
-                HashMap<String,Integer> map=sets.get(key);
-                int sum=0;
+                HashMap<String,Double> map=sets.get(key);
+                Double sum=0.0;
                 for(int i=1;i<=8;i++){
                     if(map.get(i+"")!=null)
                         sum+=map.get(i+"");
                     else
-                        map.put(i+"",0);
+                        map.put(i+"",0.0);
                 }
-                writer.write("<"+key+"");
-                for(int i=1;i<8;i++){
-                    writer.write(", "+(map.get(i+"")/sum));
+                if(sum>0){
+                    writer.write("<"+key+"");
+                    for(int i=1;i<=8;i++){
+                        writer.write(", "+(map.get(i+"")/sum));
+                    }
+                    writer.write(">\n");
                 }
-                writer.write(">\n");
             }
             writer.flush();//刷新内存，将内存中的数据立刻写出。
             writer.close();
@@ -176,7 +180,6 @@ public class DistributeCalculation {
         }
 
     }
-
 
 
     //合并统计结果1
@@ -198,16 +201,24 @@ public class DistributeCalculation {
     }
 
     //合并统计结果3
-    public static void combineResult3(HashMap<String,HashMap<String,Integer>> map1,HashMap<String,HashMap<String,Integer>> map2){
-        for(Map.Entry<String,HashMap<String,Integer>> entry:map2.entrySet()){
+    public static void combineResult3(HashMap<String,HashMap<String,Double>> map1,HashMap<String,HashMap<String,Double>> map2){
+        for(Map.Entry<String,HashMap<String,Double>> entry:map2.entrySet()){
             if(map1.get(entry.getKey())==null)
                 map1.put(entry.getKey(),entry.getValue());
             else{
-                combineResult1(map1.get(entry.getKey()),entry.getValue());
+                combineDoubleMap(map1.get(entry.getKey()),entry.getValue());
             }
         }
     }
 
+    public static void combineDoubleMap(HashMap<String,Double> map1,HashMap<String,Double> map2){
+        for (Map.Entry<String, Double> entry : map2.entrySet()) {
+            if(map1.get(entry.getKey())==null)
+                map1.put(entry.getKey(),entry.getValue());
+            else
+                map1.put(entry.getKey(),entry.getValue()+map1.get(entry.getKey()));
+        }
+    }
 
     //通话次数
     public static HashMap<String, Integer> callingTimes(String[] dataArr){
@@ -237,21 +248,21 @@ public class DistributeCalculation {
 
     //用户在各个时间段的通话时长
     public static HashMap timeRate(String[] dataArr){
-        HashMap<String,HashMap<String,Integer>> sets=new HashMap<>();
+        HashMap<String,HashMap<String,Double>> sets=new HashMap<>();
         for(int i=0;i<dataArr.length;i++){
             String[] elements=dataArr[i].split("\\s+");
-            if(elements[1]!=null && elements[9]!=null){
+            if(elements[1]!=null && elements[9]!=null && elements[11]!=null){
                 if(sets.get(elements[1])==null){
-                    HashMap<String,Integer> set=new HashMap<>();
-                    set.put(classify(elements[9]),1);
+                    HashMap<String,Double> set=new HashMap<>();
+                    set.put(classify(elements[9]),Double.parseDouble(elements[11]));
                     sets.put(elements[1],set);
                 }else{
-                    HashMap<String,Integer> set=sets.get(elements[1]);
+                    HashMap<String,Double> set=sets.get(elements[1]);
                     String timePart=classify(elements[9]);
                     if(set.get(timePart)==null)
-                        set.put(timePart,1);
+                        set.put(timePart,Double.parseDouble(elements[11]));
                     else
-                        set.put(timePart,set.get(timePart)+1);
+                        set.put(timePart,set.get(timePart)+Double.parseDouble(elements[11]));
                 }
             }
         }
