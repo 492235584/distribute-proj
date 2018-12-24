@@ -268,7 +268,7 @@ public class DistributeCalculation {
 //    时间段 8  21:00-24:00
     public static String classify(String time){
         int hour=Integer.parseInt(time.substring(0,time.indexOf(":")));
-        return ""+(Math.floor(hour/3)+1);
+        return ""+(hour/3+1);
     }
 
 

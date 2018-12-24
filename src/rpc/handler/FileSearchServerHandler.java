@@ -32,9 +32,9 @@ public class FileSearchServerHandler implements IMessageHandler<FileSearchMessag
         messageSearched.put(messageId, 1);
 
         // get all filename
-        LOG.info("start search file");
+        LOG.debug("start search file");
         Set<FileSearchResponse> allFiles = searchFile(messageId, key, searched);
-        LOG.info("search file complete");
+        LOG.debug("search file complete");
         ctx.writeAndFlush(new MessageOutput(requestId, "searchFile_res", allFiles));
     }
 

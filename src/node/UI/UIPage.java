@@ -174,7 +174,7 @@ public class UIPage {
 
         JPanel p = new JPanel(new BorderLayout());
         // 表头（列名）
-        neighborsLabel.setText("<html><body><p>邻居节点ip</p><br><p>l</p><body></html>");
+        neighborsLabel.setText("<html><body><p>邻居节点ip</p><br><p></p><body></html>");
         p.add(neighborsLabel, BorderLayout.SOUTH);
         frame.add(p, BorderLayout.SOUTH);
 

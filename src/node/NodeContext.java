@@ -19,12 +19,12 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class NodeContext {
-    public static final String NAMESPLIT = "-=-";
-    public static final String DIR_PATH = "files";
+    public static String NAMESPLIT = "-=-";
+    public static String DIR_PATH = "files";
     private static final Logger LOG = LoggerFactory.getLogger(NodeContext.class);
     // first node to link
-    public static final String START_IP = "100.66.228.198";
-    public static final int SERVER_POST = 45455;
+    public static String START_IP = "100.66.228.199";
+    public static int SERVER_POST = 45455;
     // this node's LOCAL_IP
     public static final String LOCAL_IP = getLocalHostLANIp();
     // all neighbors
@@ -38,6 +38,7 @@ public class NodeContext {
      * init NodeContext, set start node to link and build topology automatic
      */
     static {
+        loadProperties();
         neighbors = new ConcurrentHashMap<String, NodeClient>();
         messageSearched = new ConcurrentHashMap<String, Integer>();
         filenameAndStatus = new ConcurrentHashMap<String, Boolean>();
@@ -47,6 +48,27 @@ public class NodeContext {
         File dir = new File(DIR_PATH);
         for (File f : dir.listFiles()) {
             filenameAndStatus.put(f.getName(), true);
+        }
+    }
+
+    /**
+     * load properties
+     */
+    private static void loadProperties() {
+        InputStream inStream = null;
+        try {
+            inStream = new FileInputStream(new File("project.properties"));
+            Properties prop = new Properties();
+            prop.load(inStream);
+            DIR_PATH = prop.getProperty("DIR_PATH");
+            START_IP = prop.getProperty("START_IP");
+            SERVER_POST = Integer.valueOf(prop.getProperty("SERVER_POST"));
+            NAMESPLIT = prop.getProperty("NAMESPLIT");
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
