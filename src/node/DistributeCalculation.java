@@ -22,16 +22,16 @@ public class DistributeCalculation {
     public static void caculateResult(String path,int numberOfDays){
         String[] data=readCallingFile(path);
         if(data!=null){
-            HashMap<String,Integer> result1;
+            Map<String,Integer> result1;
             int[][] result2;
-            HashMap<String,HashMap<String,Double>> result3;
+            Map<String,Map<String,Double>> result3;
 
             int length1=(int)Math.floor(data.length*59/60);
             String[] myPart= Arrays.copyOfRange(data,0,length1);
 
-            HashMap<String,Integer> myResult1=callingTimes(myPart);
+            Map<String,Integer> myResult1=callingTimes(myPart);
             int[][] myResult2=rateOfMobileCompy(myPart);
-            HashMap<String,HashMap<String,Double>> myResult3=timeRate(myPart);
+            Map<String,Map<String,Double>> myResult3=timeRate(myPart);
 
 //            System.out.println(myResult);
             System.out.println(neighbors.size());
@@ -80,7 +80,7 @@ public class DistributeCalculation {
     }
 
     //计算结果1：写入文件
-    public static void writeResult(HashMap<String,Integer> sets){
+    public static void writeResult(Map<String,Integer> sets){
         try {
             FileWriter writer = new FileWriter("out1.txt",false);
             for(String key:sets.keySet())
@@ -152,12 +152,12 @@ public class DistributeCalculation {
     }
 
     //计算结果3：
-    public static void writeResult3(HashMap<String,HashMap<String,Double>> sets){
+    public static void writeResult3(Map<String,Map<String,Double>> sets){
         try {
             FileWriter writer = new FileWriter("out3.txt",false);
             for(String key:sets.keySet())
             {
-                HashMap<String,Double> map=sets.get(key);
+                Map<String,Double> map=sets.get(key);
                 Double sum=0.0;
                 for(int i=1;i<=8;i++){
                     if(map.get(i+"")!=null)
@@ -183,7 +183,7 @@ public class DistributeCalculation {
 
 
     //合并统计结果1
-    public static void combineResult1(HashMap<String,Integer> map1,HashMap<String,Integer> map2){
+    public static void combineResult1(Map<String,Integer> map1,Map<String,Integer> map2){
         for (Map.Entry<String, Integer> entry : map2.entrySet()) {
             if(map1.get(entry.getKey())==null)
                 map1.put(entry.getKey(),entry.getValue());
@@ -201,8 +201,8 @@ public class DistributeCalculation {
     }
 
     //合并统计结果3
-    public static void combineResult3(HashMap<String,HashMap<String,Double>> map1,HashMap<String,HashMap<String,Double>> map2){
-        for(Map.Entry<String,HashMap<String,Double>> entry:map2.entrySet()){
+    public static void combineResult3(Map<String,Map<String,Double>> map1,Map<String,Map<String,Double>> map2){
+        for(Map.Entry<String,Map<String,Double>> entry:map2.entrySet()){
             if(map1.get(entry.getKey())==null)
                 map1.put(entry.getKey(),entry.getValue());
             else{
@@ -211,7 +211,7 @@ public class DistributeCalculation {
         }
     }
 
-    public static void combineDoubleMap(HashMap<String,Double> map1,HashMap<String,Double> map2){
+    public static void combineDoubleMap(Map<String,Double> map1,Map<String,Double> map2){
         for (Map.Entry<String, Double> entry : map2.entrySet()) {
             if(map1.get(entry.getKey())==null)
                 map1.put(entry.getKey(),entry.getValue());
@@ -221,8 +221,8 @@ public class DistributeCalculation {
     }
 
     //通话次数
-    public static HashMap<String, Integer> callingTimes(String[] dataArr){
-        HashMap<String,Integer> sets=new HashMap<>();
+    public static Map<String, Integer> callingTimes(String[] dataArr){
+        Map<String,Integer> sets=new TreeMap<>();
         for (int i=0;i<dataArr.length;i++) {
             String[] elements=dataArr[i].split("\\s+");
             if(sets.get(elements[1])==null){
@@ -247,17 +247,17 @@ public class DistributeCalculation {
     }
 
     //用户在各个时间段的通话时长
-    public static HashMap timeRate(String[] dataArr){
-        HashMap<String,HashMap<String,Double>> sets=new HashMap<>();
+    public static Map timeRate(String[] dataArr){
+        Map<String,Map<String,Double>> sets=new TreeMap<>();
         for(int i=0;i<dataArr.length;i++){
             String[] elements=dataArr[i].split("\\s+");
             if(elements[1]!=null && elements[9]!=null && elements[11]!=null){
                 if(sets.get(elements[1])==null){
-                    HashMap<String,Double> set=new HashMap<>();
+                    Map<String,Double> set=new TreeMap<>();
                     set.put(classify(elements[9]),Double.parseDouble(elements[11]));
                     sets.put(elements[1],set);
                 }else{
-                    HashMap<String,Double> set=sets.get(elements[1]);
+                    Map<String,Double> set=sets.get(elements[1]);
                     String timePart=classify(elements[9]);
                     if(set.get(timePart)==null)
                         set.put(timePart,Double.parseDouble(elements[11]));

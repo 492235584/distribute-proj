@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4d60cc5-6d2f-4d0f-86ba-3e642c3b5288" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/notify-subscription.log" afterPath="$PROJECT_DIR$/logs/notify-subscription.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/NodeClient.java" afterPath="$PROJECT_DIR$/src/node/NodeClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/UI/UIPage.java" afterPath="$PROJECT_DIR$/src/node/UI/UIPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/requestpojo/DistributeCalculateMessage.java" afterPath="$PROJECT_DIR$/src/node/requestpojo/DistributeCalculateMessage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/responsepojo/CalculationResultResponse.java" afterPath="$PROJECT_DIR$/src/node/responsepojo/CalculationResultResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rpc/handler/DistributeCalculateHandler.java" afterPath="$PROJECT_DIR$/src/rpc/handler/DistributeCalculateHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/DistributeCalculation.java" afterPath="$PROJECT_DIR$/src/node/DistributeCalculation.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,20 +17,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="NodeContext.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/node/NodeContext.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="405" column="19" lean-forward="true" selection-start-line="405" selection-start-column="19" selection-end-line="405" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3558#3559#0" expanded="true" />
-                <element signature="e#3588#3589#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="NodeClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/node/NodeClient.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -46,7 +29,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UIPage.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UIPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/node/UI/UIPage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-761">
@@ -62,11 +45,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DistributeCalculation.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="log4j.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/log4j.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DistributeCalculation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/node/DistributeCalculation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="292" column="22" lean-forward="true" selection-start-line="292" selection-start-column="22" selection-end-line="292" selection-end-column="22" />
+            <state relative-caret-position="170">
+              <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -122,16 +115,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileSaveServerHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/rpc/handler/FileSaveServerHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -162,7 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/rpc/handler/searchFileServerHandler.java" />
         <option value="$PROJECT_DIR$/src/rpc/server/RPCServer.java" />
         <option value="$PROJECT_DIR$/src/rpc/client/RPCClient.java" />
         <option value="$PROJECT_DIR$/src/rpc/client/RPCException.java" />
@@ -204,7 +186,6 @@
         <option value="$PROJECT_DIR$/src/node/requestpojo/NodeSearchMessage.java" />
         <option value="$PROJECT_DIR$/src/node/UI/Tabel_Model.java" />
         <option value="$PROJECT_DIR$/src/node/NodeContext.java" />
-        <option value="$PROJECT_DIR$/src/node/DistributeCalculation.java" />
         <option value="$PROJECT_DIR$/src/rpc/handler/FileSearchServerHandler.java" />
         <option value="$PROJECT_DIR$/project.properties" />
         <option value="$PROJECT_DIR$/src/node/NodeServer.java" />
@@ -213,6 +194,8 @@
         <option value="$PROJECT_DIR$/src/node/NodeClient.java" />
         <option value="$PROJECT_DIR$/files/100.67.154.55-=-smallfile.txt" />
         <option value="$PROJECT_DIR$/src/node/UI/UIPage.java" />
+        <option value="$PROJECT_DIR$/src/node/DistributeCalculation.java" />
+        <option value="$PROJECT_DIR$/src/DistributeCalculation.java" />
       </list>
     </option>
   </component>
@@ -401,11 +384,11 @@
       <recent name="node.responsepojo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/node" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/node/responsepojo" />
       <recent name="$PROJECT_DIR$/src/node/requestpojo" />
       <recent name="$PROJECT_DIR$/src/rpc/handler" />
-      <recent name="$PROJECT_DIR$/src/node" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1056,12 +1039,12 @@
       <workItem from="1545376036953" duration="9001000" />
       <workItem from="1545399997194" duration="3430000" />
       <workItem from="1545458181811" duration="17345000" />
-      <workItem from="1545543843861" duration="35044000" />
+      <workItem from="1545543843861" duration="35338000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79804000" />
+    <option name="totallyTimeSpent" value="80098000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="831" extended-state="0" />
@@ -1077,7 +1060,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45013124" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30839896" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1172,14 +1155,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/rpc/server/RPCServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="55" column="38" lean-forward="true" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/rpc/server/MessageCollector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -1463,14 +1438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/rpc/handler/FileSearchServerHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -1581,14 +1548,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/node/DistributeCalculation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="292" column="22" lean-forward="true" selection-start-line="292" selection-start-column="22" selection-end-line="292" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/node/UI/UIPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-761">
@@ -1600,6 +1559,30 @@
             <element signature="e#6322#6323#0" expanded="true" />
             <element signature="e#6380#6381#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DistributeCalculation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/node/DistributeCalculation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
