@@ -173,7 +173,7 @@ public class NodeContext {
 
         /** distribute **/
         // if more than 10M,split the file and store to other node.
-        if (bytes.length > 1 * 1024 * 1024) {
+        if (bytes.length > 10 * 1024 * 1024) {
             // split to partNum part,use name as ip-filename-partNum-part
             int neighborSize = neighbors.size();
             int partNum = neighborSize > 4 ? 4 : neighborSize;
@@ -207,6 +207,7 @@ public class NodeContext {
                 }
                 FileSaveMessage message = new FileSaveMessage(messageId, filename, LOCAL_IP, bytes);
                 n.getValue().saveFile(message);
+                i++;
             }
         }
 

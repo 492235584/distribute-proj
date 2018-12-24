@@ -39,7 +39,7 @@ public class MessageCollector extends ChannelInboundHandlerAdapter {
 			}
 
 		};
-		this.executor = new ThreadPoolExecutor(1, workerThreads, 30, TimeUnit.SECONDS, queue, factory,
+		this.executor = new ThreadPoolExecutor(5, workerThreads, 30, TimeUnit.SECONDS, queue, factory,
 				new CallerRunsPolicy());
 		this.handlers = handlers;
 		this.registry = registry;

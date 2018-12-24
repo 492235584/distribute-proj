@@ -18,8 +18,8 @@ import java.util.List;
 import java.util.Timer;
 import java.util.concurrent.ConcurrentHashMap;
 
+import static node.DistributeCalculation.caculateResult;
 import static node.NodeContext.*;
-import static node.DistributeCalculation.*;
 
 public class UIPage {
     private static JLabel neighborsLabel = new JLabel();
@@ -35,7 +35,7 @@ public class UIPage {
             public void run() {
                 buildTopology();
             }
-        }, 3000 , 3000);
+        }, 3000, 3000);
     }
 
     public static void initNode() {
@@ -179,7 +179,7 @@ public class UIPage {
         button3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                caculateResult("1.txt",29);
+                caculateResult("1.txt", 29);
             }
         });
 
@@ -285,27 +285,35 @@ public class UIPage {
             return -1;
         }
 
-        int total = list.get(0).getTotalPart();
-
-        // just have one file
-        if (total == 1) {
-            return list.get(0).getSize();
-        }
-
-        long totalSize = 0;
-        Set<Integer> allpart = new HashSet<>();
-        for (int i = 1; i <= total; i++) {
-            allpart.add(i);
-        }
-
+        // find single file in list
+        boolean haveSingle = false;
+        FileSearchResponse single = null;
         for (FileSearchResponse response : list) {
-            if (allpart.contains(response.getPart())) {
-                allpart.remove(response.getPart());
-                totalSize += response.getSize();
+            if (response.getTotalPart() == 1) {
+                haveSingle = true;
+                single = response;
+                break;
             }
         }
 
-        return allpart.size() != 0 ? -1 : totalSize;
+        // just have one file
+        if (haveSingle) {
+            return single.getSize();
+        } else {
+            long totalSize = 0;
+            Set<Integer> allpart = new HashSet<>();
+            for (int i = 1; i <= list.get(0).getTotalPart(); i++) {
+                allpart.add(i);
+            }
+
+            for (FileSearchResponse response : list) {
+                if (allpart.contains(response.getPart())) {
+                    allpart.remove(response.getPart());
+                    totalSize += response.getSize();
+                }
+            }
+            return allpart.size() != 0 ? -1 : totalSize;
+        }
     }
 
     /**
