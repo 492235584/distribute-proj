@@ -310,11 +310,24 @@ public class UIPage {
             return;
         }
 
+        // find single file in list
+        boolean haveSingle = false;
+        FileSearchResponse single = null;
+        for (FileSearchResponse response : list) {
+            if (response.getTotalPart() == 1) {
+                haveSingle = true;
+                single = response;
+                break;
+            }
+        }
         // single file
-        if (list.get(0).getTotalPart() == 1) {
-            FileSearchResponse response = list.get(0);
-            NodeContext.downloadFile(response.completeName(), response.getSaveIp());
-        } else { // totalPart > 1
+        if (haveSingle) {
+            // if file exist, do nothing
+            if (filenameAndStatus.containsKey(single.completeName())) {
+                return;
+            }
+            NodeContext.downloadFile(single.completeName(), single.getSaveIp());
+        } else { // have not single file
             int total = list.get(0).getTotalPart();
             Map<Integer, FileSearchResponse> parts = new TreeMap<>();
             for (FileSearchResponse response : list) {
@@ -325,6 +338,10 @@ public class UIPage {
 
             // download every parts
             for (FileSearchResponse response : parts.values()) {
+                // if file exist, do nothing
+                if (filenameAndStatus.containsKey(response.completeName())) {
+                    return;
+                }
                 NodeContext.downloadFile(response.completeName(), response.getSaveIp());
             }
 
