@@ -19,7 +19,7 @@ public class DistributeCalculateHandler implements IMessageHandler<DistributeCal
 
     @Override
     public void handle(ChannelHandlerContext ctx, String requestId, DistributeCalculateMessage message) {
-        LOG.info("start calculate calling");
+        LOG.info("receive the calculate data");
         HashMap<String,Integer> myResult1,result1;
         int[][] myResult2,result2;
         HashMap<String,HashMap<String,Integer>> myResult3,result3;
@@ -34,54 +34,55 @@ public class DistributeCalculateHandler implements IMessageHandler<DistributeCal
         }
         messageSearched.put(messageId, 1);
 
-        //继续分割
-        if(neighbors.size()>1){
-            int length=(int)Math.floor(data.length/neighbors.size());
-            //此节点处理部分
-            String[] myPart= Arrays.copyOfRange(data,0,length);
-            String[] otherPart=Arrays.copyOfRange(data,length,data.length);
-
-            myResult1=callingTimes(myPart);
-            myResult2=rateOfMobileCompy(myPart);
-            myResult3=timeRate(myPart);
-            //切割继续分发
-            int id=1;
-            Iterator entries = neighbors.entrySet().iterator();
-            String[] sendData;
-
-            while (entries.hasNext()) {
-                Map.Entry entry = (Map.Entry) entries.next();
-                //该节点为发送信息的节点
-                if(entry.getKey()==srcIp)
-                    continue;
-                NodeClient client = (NodeClient)entry.getValue();
-                //防止最后遍历的节点为发送信息的节点
-                if(entries.hasNext()&& id!=neighbors.size()-1)
-                    sendData=Arrays.copyOfRange(otherPart,(id-1)*length,id*length);
-                else
-                    sendData=Arrays.copyOfRange(otherPart,(id-1)*length,otherPart.length);
-                id++;
-                CalculationResultResponse response = client.distributeCalculate(new DistributeCalculateMessage(messageId,LOCAL_IP,sendData));
-                if(response==null && sendData!=null)
-                {
-                    result1=callingTimes(sendData);
-                    result2=rateOfMobileCompy(sendData);
-                    result3=timeRate(sendData);
-                }else{
-                    result1=response.getResult1();
-                    result2=response.getResult2();
-                    result3=response.getResult3();
-                }
-
-                combineResult1(myResult1,result1);
-                combineResult2(myResult2,result2);
-                combineResult3(myResult3,result3);
-            }
-        }else{
+//        //继续分割
+//        if(neighbors.size()>1){
+//            int length=(int)Math.floor(data.length/neighbors.size());
+//            //此节点处理部分
+//            String[] myPart= Arrays.copyOfRange(data,0,length);
+//            String[] otherPart=Arrays.copyOfRange(data,length,data.length);
+//
+//            myResult1=callingTimes(myPart);
+//            myResult2=rateOfMobileCompy(myPart);
+//            myResult3=timeRate(myPart);
+//            //切割继续分发
+//            int id=1;
+//            Iterator entries = neighbors.entrySet().iterator();
+//            String[] sendData;
+//
+//            while (entries.hasNext()) {
+//                Map.Entry entry = (Map.Entry) entries.next();
+//                //该节点为发送信息的节点
+//                if(entry.getKey()==srcIp)
+//                    continue;
+//                NodeClient client = (NodeClient)entry.getValue();
+//                //防止最后遍历的节点为发送信息的节点
+//                if(entries.hasNext()&& id!=neighbors.size()-1)
+//                    sendData=Arrays.copyOfRange(otherPart,(id-1)*length,id*length);
+//                else
+//                    sendData=Arrays.copyOfRange(otherPart,(id-1)*length,otherPart.length);
+//                id++;
+//                CalculationResultResponse response = client.distributeCalculate(new DistributeCalculateMessage(messageId,LOCAL_IP,sendData));
+//                if(response==null && sendData!=null)
+//                {
+//                    result1=callingTimes(sendData);
+//                    result2=rateOfMobileCompy(sendData);
+//                    result3=timeRate(sendData);
+//                }else{
+//                    result1=response.getResult1();
+//                    result2=response.getResult2();
+//                    result3=response.getResult3();
+//                }
+//
+//                combineResult1(myResult1,result1);
+//                combineResult2(myResult2,result2);
+//                combineResult3(myResult3,result3);
+//            }
+//        }
+//        else{
             myResult1=callingTimes(data);
             myResult2=rateOfMobileCompy(data);
             myResult3=timeRate(data);
-        }
+//        }
         CalculationResultResponse finalResult=new CalculationResultResponse(myResult1,myResult2,myResult3);
 
         LOG.info("calculate calling complete");

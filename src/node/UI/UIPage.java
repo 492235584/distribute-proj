@@ -12,8 +12,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.text.DecimalFormat;
 import java.util.*;
 import java.util.List;
+import java.util.Timer;
 import java.util.concurrent.ConcurrentHashMap;
 
 import static node.NodeContext.*;
@@ -26,6 +28,13 @@ public class UIPage {
         initUI();
         initNode();
 
+        // 定时自适应拓扑
+        new Timer("timer").schedule(new TimerTask() {
+            @Override
+            public void run() {
+                buildTopology();
+            }
+        }, 3000 , 3000);
     }
 
     public static void initNode() {
@@ -148,7 +157,7 @@ public class UIPage {
 
         JPanel panel3 = new JPanel();
         panel3.setLayout(new BorderLayout());
-        ImageIcon icon3 = new ImageIcon("upload.png");
+        ImageIcon icon3 = new ImageIcon("compute.jpg");
         JLabel labIcon3 = new JLabel(icon3);
         Dimension dim31 = new Dimension(200, 137);
         labIcon3.setPreferredSize(dim31);
@@ -223,7 +232,7 @@ public class UIPage {
             long size = containAllFiles(entry.getValue());
             if (size > 0) {
                 FilenameAndIp info = entry.getKey();
-                model.addRow(info.getFilename(), info.getIp(), String.valueOf(size));
+                model.addRow(info.getFilename(), info.getIp(), getFormatSize(size));
 
                 list.put(i, entry.getValue());
             }
@@ -380,9 +389,33 @@ public class UIPage {
     public static void updateNeiLabel(ConcurrentHashMap<String, NodeClient> neighbors) {
         StringBuilder str = new StringBuilder("<html><body><p>邻居节点ip</p>");
         for (String ip : neighbors.keySet()) {
-            str.append("<br><p>"+ip+"</p>");
+            str.append("<br><p>" + ip + "</p>");
         }
         str.append("<body></html>");
         neighborsLabel.setText(str.toString());
+    }
+
+    /**
+     * 返回byte的数据大小对应的文本
+     *
+     * @param size
+     * @return
+     */
+    private static String getFormatSize(long size) {
+        DecimalFormat formater = new DecimalFormat("####.00");
+        if (size < 1024) {
+            return size + "bytes";
+        } else if (size < 1024 * 1024) {
+            float kbsize = size / 1024f;
+            return formater.format(kbsize) + "KB";
+        } else if (size < 1024 * 1024 * 1024) {
+            float mbsize = size / 1024f / 1024f;
+            return formater.format(mbsize) + "MB";
+        } else if (size < 1024 * 1024 * 1024 * 1024) {
+            float gbsize = size / 1024f / 1024f / 1024f;
+            return formater.format(gbsize) + "GB";
+        } else {
+            return "size: error";
+        }
     }
 }

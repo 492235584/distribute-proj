@@ -25,7 +25,6 @@ public class DistributeCalculation {
             int[][] result2;
             HashMap<String,HashMap<String,Integer>> result3;
 
-            //第一份取1/4
             int length1=(int)Math.floor(data.length*59/60);
             String[] myPart= Arrays.copyOfRange(data,0,length1);
 
@@ -69,11 +68,13 @@ public class DistributeCalculation {
             }
 
             //do write result into file
-//            writeResult(myResult1);
+            writeResult(myResult1);
 
             generateChart((double)myResult2[0][0],(double)myResult2[0][1],(double)myResult2[0][2],"市话");
             generateChart((double)myResult2[1][0],(double)myResult2[1][1],(double)myResult2[1][2],"长途");
             generateChart((double)myResult2[2][0],(double)myResult2[2][1],(double)myResult2[2][2],"国际");
+
+            writeResult3(myResult3);
         }
     }
 
@@ -146,6 +147,34 @@ public class DistributeCalculation {
         pieplot.setSectionOutlinesVisible(false);
 
         pieplot.setNoDataMessage("没有可供使用的数据！");
+    }
+
+    //计算结果3：
+    public static void writeResult3(HashMap<String,HashMap<String,Integer>> sets){
+        try {
+            FileWriter writer = new FileWriter("out3.txt",false);
+            for(String key:sets.keySet())
+            {
+                HashMap<String,Integer> map=sets.get(key);
+                int sum=0;
+                for(int i=1;i<=8;i++){
+                    if(map.get(i+"")!=null)
+                        sum+=map.get(i+"");
+                    else
+                        map.put(i+"",0);
+                }
+                writer.write("<"+key+"");
+                for(int i=1;i<8;i++){
+                    writer.write(", "+(map.get(i+"")/sum));
+                }
+                writer.write(">\n");
+            }
+            writer.flush();//刷新内存，将内存中的数据立刻写出。
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 
